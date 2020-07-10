@@ -2,7 +2,7 @@
 
 Polish GTA V FiveM RolePlay Server.
 
-##Discord
+## Discord
 [Join us!](https://discord.gg/Ffrh3KY)
 
 ### Project setup
