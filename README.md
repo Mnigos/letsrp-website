@@ -1,6 +1,11 @@
-# letsrp-website
+# Let's RP Website
 
-## Project setup
+Polish GTA V FiveM RolePlay Server.
+
+##Discord
+[Join us!](https://discord.gg/Ffrh3KY)
+
+### Project setup
 ```
 npm install
 ```
@@ -19,6 +24,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
