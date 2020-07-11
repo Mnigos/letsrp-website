@@ -1,11 +1,58 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/Applications">Applications</router-link>
-    </div>
+    <nav class="navbar">
+      <div class="navbar__element">
+        <router-link to="/">Home</router-link>
+      </div>
+      <div class="navbar__element">
+        <router-link to="/Applications">Applications</router-link>
+      </div>
+    </nav>
     <router-view />
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+@use './styles/vars';
+
+body {
+  overflow-x: hidden;
+  margin: 0 !important;
+  color: #fff;
+  font-size: 24px;
+  font-family: sans-serif;
+  background-color: vars.$dark-color;
+  display: flex;
+}
+
+.navbar {
+  width: 100vw;
+  height: 7vh;
+  display: flex;
+  justify-content: flex-end;
+
+  &__element {
+    margin: 10px 10px 0 10px;
+
+    &:hover {
+      border-bottom: solid 2px #fff;
+      cursor: pointer;
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+</style>
