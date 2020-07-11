@@ -9,13 +9,13 @@
           <p>Możesz nas znaleźć na:</p>
         </div>
         <div class="header__socials-links">
-          <div class="header-content__description__button">
+          <div class="header__socials-links-button">
             <a href="https://discord.gg/Ffrh3KY" target="_blank">Discord</a>
           </div>
-          <div class="header-content__description__button">
+          <div class="header__socials-links-button">
             <a href="https://twitter.com/letsrp2" target="_blank">Twitter</a>
           </div>
-          <div class="header-content__description__button">
+          <div class="header__socials-links-button">
             <a href="https://patronite.pl/letsrp" target="_blank">Patronite</a>
           </div>
         </div>
@@ -30,4 +30,38 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+@use './../styles/vars';
+
+.header {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+
+  &__socials {
+    &-links {
+      &-button {
+        background-color: vars.$dark-color;
+        margin: 20px;
+        border-radius: 15px;
+        height: 7vh;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          background-color: vars.$darker-color;
+        }
+      }
+    }
+
+    a {
+      padding-top: 15px;
+      color: #fff;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+</style>

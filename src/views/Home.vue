@@ -1,16 +1,31 @@
 <template>
   <div class="home">
+    <Logo />
     <Header />
   </div>
 </template>
 
 <script>
 import Header from "./../components/Header.vue";
+import Logo from "./../components/Logo.vue";
 
 export default {
   name: "Home",
   components: {
-    Header
+    Header,
+    Logo
   }
 };
 </script>
+
+<style lang="scss">
+@use './../styles/vars';
+
+body {
+  background-image: url("./../assets/background.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: flex-start;
+}
+</style>
