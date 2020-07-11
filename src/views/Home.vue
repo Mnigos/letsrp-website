@@ -6,15 +6,15 @@
 </template>
 
 <script>
-import Header from "./../components/Header.vue";
-import Logo from "./../components/Logo.vue";
+import Header from './../components/Header.vue';
+import Logo from './../components/Logo.vue';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     Header,
-    Logo
-  }
+    Logo,
+  },
 };
 </script>
 
@@ -22,7 +22,7 @@ export default {
 @use './../styles/vars';
 
 body {
-  background-image: url("./../assets/background.jpg");
+  background-image: url('./../assets/background.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
