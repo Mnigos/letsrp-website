@@ -2,7 +2,13 @@
   <div class="header__wrapper">
     <header class="header">
       <div class="header__description">
-        <h1>Polski serwer RolePlay</h1>
+        <h1>
+          <div class="header__description-logo">
+            <span class="header__description-logo--left">Let's </span>
+            <span>RP</span>
+          </div>
+          <p>Polski serwer RolePlay</p>
+        </h1>
       </div>
       <div class="header__socials">
         <div class="header__socials-label">
@@ -38,6 +44,24 @@ export default {
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
+
+  &__description {
+    &-logo {
+      height: 12vh;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-weight: 400;
+      font-size: 100px;
+      letter-spacing: 1px;
+
+      &--left {
+        color: vars.$green-color;
+      }
+    }
+
+    p {
+      font-size: 28px;
+    }
+  }
 
   &__socials {
     &-links {

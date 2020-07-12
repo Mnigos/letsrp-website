@@ -16,11 +16,12 @@ export default {
 @use "./../styles/vars.scss";
 
 .logo {
-  margin: 60px 0;
+  //margin: 60px 0;
   display: flex;
   justify-content: center;
 
   img {
+    display: none;
     width: 80%;
     height: 80%;
   }
