@@ -15,6 +15,8 @@
 <style lang="scss">
 @use './styles/vars';
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 body {
   overflow-x: hidden;
   margin: 0 !important;

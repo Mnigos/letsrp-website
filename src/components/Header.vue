@@ -47,9 +47,10 @@ export default {
 
   &__description {
     &-logo {
-      height: 12vh;
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      font-weight: 400;
+      height: 15vh;
+      //font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-family: 'Anton', sans-serif;
+      font-weight: 600;
       font-size: 100px;
       letter-spacing: 1px;
 
