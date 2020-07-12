@@ -59,7 +59,7 @@ export default {
     }
 
     p {
-      font-size: 28px;
+      font-size: 27px;
     }
   }
 
