@@ -29,7 +29,7 @@ body {
 
 .navbar {
   width: 100vw;
-  height: 7vh;
+  height: 45px;
   display: flex;
   justify-content: flex-end;
 

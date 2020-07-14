@@ -7,7 +7,9 @@
             <span class="header__description-logo--left">Let's </span>
             <span>RP</span>
           </div>
-          <p>Polski serwer RolePlay</p>
+          <div class="header__description-label">
+            <p>Polski serwer RolePlay</p>
+          </div>
         </h1>
       </div>
       <div class="header__socials">
@@ -48,7 +50,6 @@ export default {
   &__description {
     &-logo {
       height: 15vh;
-      //font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       font-family: 'Anton', sans-serif;
       font-weight: 600;
       font-size: 100px;
@@ -59,7 +60,7 @@ export default {
       }
     }
 
-    p {
+    &-label {
       font-size: 27px;
     }
   }
@@ -86,6 +87,80 @@ export default {
       text-decoration: none;
       width: 100%;
       height: 100%;
+    }
+  }
+}
+
+@media (min-width: 570px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+
+    &__description {
+      &-logo {
+        //height: 400px;
+        font-family: 'Anton', sans-serif;
+        font-weight: 600;
+        font-size: 130px;
+        letter-spacing: 1px;
+
+        &--left {
+          color: vars.$green-color;
+        }
+      }
+
+      &-label {
+        font-size: 36px;
+        margin-top: 60px;
+      }
+    }
+
+    &__socials {
+      &-label {
+        font-size: 32px;
+      }
+
+      &-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-button {
+          background-color: vars.$dark-color;
+          font-size: 32px;
+          margin: 20px;
+          border-radius: 2vh;
+          height: 7vh;
+          width: 400px;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: flex-end;
+
+          &:hover {
+            background-color: vars.$darker-color;
+          }
+
+          a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+
+      a {
+        padding-top: 15px;
+        color: #fff;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
