@@ -16,7 +16,6 @@ export default {
 @use "./../styles/vars.scss";
 
 .logo {
-  //margin: 60px 0;
   display: flex;
   justify-content: center;
 
@@ -24,6 +23,21 @@ export default {
     display: none;
     width: 80%;
     height: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    margin: 20vh;
+    display: flex;
+    justify-content: center;
+    width: 25vw;
+
+    img {
+      display: flex;
+      width: 80%;
+      height: 80%;
+    }
   }
 }
 </style>

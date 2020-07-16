@@ -28,4 +28,11 @@ body {
   background-size: cover;
   align-items: flex-start;
 }
+
+@media (min-width: 1024px) {
+  .home {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 </style>

@@ -1,13 +1,15 @@
 <template>
   <div id="app">
-    <nav class="navbar">
-      <div class="navbar__element">
-        <router-link to="/">Strona Główna</router-link>
-      </div>
-      <div class="navbar__element">
-        <router-link to="/Applications">Applications</router-link>
-      </div>
-    </nav>
+    <div class="navbar__wrapper">
+      <nav class="navbar">
+        <div class="navbar__element">
+          <router-link to="/">Strona Główna</router-link>
+        </div>
+        <div class="navbar__element">
+          <router-link to="/Applications">Applications</router-link>
+        </div>
+      </nav>
+    </div>
     <router-view />
   </div>
 </template>
@@ -27,11 +29,15 @@ body {
   display: flex;
 }
 
-.navbar {
+.navbar__wrapper {
   width: 100vw;
   height: 45px;
+}
+
+.navbar {
   display: flex;
   justify-content: flex-end;
+  margin-right: 3vw;
 
   &__element {
     margin: 10px 10px 0 10px;
