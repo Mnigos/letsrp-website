@@ -8,14 +8,34 @@
     <div class="content_wrapper">
       <main>
         <article class="content">
-          <div class="content__element"><p>Podanie na Whitelist</p></div>
-          <div class="content__element"><p>Podanie na Supporta</p></div>
-          <div class="content__element"><p>Podanie na frakcję LSPD</p></div>
-          <div class="content__element"><p>Podanie na frakcję LSCM</p></div>
-          <div class="content__element"><p>Podanie na frakcję LSCM</p></div>
-          <div class="content__element"><p>Podanie na Firmę</p></div>
           <div class="content__element">
-            <p>Podanie na Organizację Przestępczą</p>
+            <router-link to="/Applications">Podanie na Whitelist</router-link>
+          </div>
+          <div class="content__element">
+            <router-link to="/Applications">Podanie na Supporta</router-link>
+          </div>
+          <div class="content__element">
+            <router-link to="/Applications"
+              >Podanie na frakcję LSPD</router-link
+            >
+          </div>
+          <div class="content__element">
+            <router-link to="/Applications"
+              >Podanie na frakcję LSCM</router-link
+            >
+          </div>
+          <div class="content__element">
+            <router-link to="/Applications"
+              >Podanie na frakcję LSCM</router-link
+            >
+          </div>
+          <div class="content__element">
+            <router-link to="/Applications">Podanie na Firmę</router-link>
+          </div>
+          <div class="content__element">
+            <router-link to="/Applications"
+              >Podanie na Organizację Przestępczą</router-link
+            >
           </div>
         </article>
       </main>
