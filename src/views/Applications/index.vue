@@ -81,8 +81,25 @@
     background-color: vars.$dark-color;
     width: 80vw;
     margin: 10px;
+    height: 100px;
+
     &:hover {
       background-color: vars.$darker-color;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      &:visited {
+        color: #fff;
+        text-decoration: none;
+      }
     }
   }
 }
