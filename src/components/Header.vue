@@ -173,7 +173,7 @@ export default {
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
-    margin-right: 10vw;
+    margin-right: 15vw;
 
     &__description {
       &-logo {
