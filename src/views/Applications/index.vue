@@ -9,29 +9,29 @@
       <main>
         <article class="content">
           <div class="content__element">
-            <router-link to="/Applications/wl"
-              >Podanie na Whitelist</router-link
-            >
+            <router-link to="/Applications/wl">
+              Podanie na Whitelist
+            </router-link>
           </div>
           <div class="content__element">
-            <router-link to="/Applications/sup"
-              >Podanie na Supporta</router-link
-            >
+            <router-link to="/Applications/sup">
+              Podanie na Supporta
+            </router-link>
           </div>
           <div class="content__element">
-            <router-link to="/Applications/lspd"
-              >Podanie na frakcję LSPD</router-link
-            >
+            <router-link to="/Applications/lspd">
+              Podanie na frakcję LSPD
+            </router-link>
           </div>
           <div class="content__element">
-            <router-link to="/Applications/ems"
-              >Podanie na frakcję EMS</router-link
-            >
+            <router-link to="/Applications/ems">
+              Podanie na frakcję EMS
+            </router-link>
           </div>
           <div class="content__element">
-            <router-link to="/Applications/lscm"
-              >Podanie na frakcję LSCM</router-link
-            >
+            <router-link to="/Applications/lscm">
+              Podanie na frakcję LSCM
+            </router-link>
           </div>
           <div class="content__element">
             <router-link to="/Applications/firm">Podanie na Firmę</router-link>
