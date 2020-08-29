@@ -1,51 +1,82 @@
 <template>
-  <div class="about">
-    <div class="header__wrapper">
-      <header class="header">
-        <h1>Podania</h1>
-      </header>
-    </div>
-    <div class="content_wrapper">
-      <main>
-        <article class="content">
-          <div class="content__element">
-            <router-link to="/Applications/wl">
-              Podanie na Whitelist
-            </router-link>
-          </div>
-          <div class="content__element">
-            <router-link to="/Applications/sup">
-              Podanie na Supporta
-            </router-link>
-          </div>
-          <div class="content__element">
-            <router-link to="/Applications/lspd">
-              Podanie na frakcję LSPD
-            </router-link>
-          </div>
-          <div class="content__element">
-            <router-link to="/Applications/ems">
-              Podanie na frakcję EMS
-            </router-link>
-          </div>
-          <div class="content__element">
-            <router-link to="/Applications/lscm">
-              Podanie na frakcję LSCM
-            </router-link>
-          </div>
-          <div class="content__element">
-            <router-link to="/Applications/firm">Podanie na Firmę</router-link>
-          </div>
-          <div class="content__element">
-            <router-link to="/Applications/org">
-              Podanie na Organizację Przestępczą
-            </router-link>
-          </div>
-        </article>
-      </main>
+  <div class="application">
+    <div class="about">
+      <div class="header__wrapper">
+        <header class="header">
+          <h1>Podania</h1>
+        </header>
+      </div>
+      <div class="content_wrapper">
+        <main>
+          <article class="content">
+            <div>
+              <button @click="go('wlApp')" class="content__element">
+                Podanie na Whitelist
+              </button>
+            </div>
+            <div class="content__element">
+              <router-link to="/Applications/sup">
+                Podanie na Supporta
+              </router-link>
+            </div>
+            <div class="content__element">
+              <router-link to="/Applications/lspd">
+                Podanie na frakcję LSPD
+              </router-link>
+            </div>
+            <div class="content__element">
+              <router-link to="/Applications/ems">
+                Podanie na frakcję EMS
+              </router-link>
+            </div>
+            <div class="content__element">
+              <router-link to="/Applications/lscm">
+                Podanie na frakcję LSCM
+              </router-link>
+            </div>
+            <div class="content__element">
+              <router-link to="/Applications/firm"
+                >Podanie na Firmę</router-link
+              >
+            </div>
+            <div class="content__element">
+              <router-link to="/Applications/org">
+                Podanie na Organizację Przestępczą
+              </router-link>
+            </div>
+
+            <component :is="componentToShow"></component>
+          </article>
+        </main>
+      </div>
     </div>
   </div>
 </template>
+
+<script>
+import { h } from 'vue';
+import wlApp from './../../components/wlApp.vue';
+
+const pages = {
+  wlApp,
+};
+
+export default {
+  name: 'Applications',
+  data() {
+    return {
+      componentToShow: {
+        render: () => h('div', ''),
+      },
+    };
+  },
+  methods: {
+    go(where) {
+      this.componentToShow = pages[where];
+    },
+  },
+};
+</script>
 
 <style lang="scss">
 @use './../../styles/vars';
@@ -102,6 +133,14 @@
       }
     }
   }
+}
+
+button {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+  font-size: 24px;
+  font-family: sans-serif;
 }
 
 @media (min-width: 1024px) {
