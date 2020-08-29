@@ -9,8 +9,8 @@
           <div class="content-ic__element">
             <form>
               <label class="content-ic__element-label"
-                ><b>IC</b> | Imię i Nazwisko</label
-              >
+                ><b>IC</b> | Imię i Nazwisko
+              </label>
               <input
                 type="text"
                 class="content-ic__element-form"
@@ -22,8 +22,8 @@
           <div class="content-ic__element">
             <form>
               <label class="content-ic__element-label"
-                ><b>IC</b> | Data Urodzenia</label
-              >
+                ><b>IC</b> | Data Urodzenia
+              </label>
               <input
                 type="text"
                 class="content-ic__element-form"
@@ -35,8 +35,8 @@
           <div class="content-ic__element">
             <form>
               <label class="content-ic__element-label"
-                ><b>IC</b> | Pomysł na Postać</label
-              >
+                ><b>IC</b> | Pomysł na Postać
+              </label>
               <input
                 type="text"
                 class="content-ic__element-form"
@@ -48,8 +48,8 @@
           <div class="content-ic__element">
             <form>
               <label class="content-ic__element-label"
-                ><b>IC</b> | Kreatywna Akcja</label
-              >
+                ><b>IC</b> | Kreatywna Akcja
+              </label>
               <input
                 type="text"
                 class="content-ic__element-form"
