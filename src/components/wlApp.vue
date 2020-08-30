@@ -18,7 +18,7 @@
                 type="text"
                 class="content-ic__element-form"
                 name="ic/name"
-                label="Imię i Nazwisko twojej postaci."
+                placeholder="Imię i Nazwisko twojej postaci."
               />
             </form>
           </div>
@@ -31,7 +31,7 @@
                 type="text"
                 class="content-ic__element-form"
                 name="ic/date"
-                label="Data urodzenia twojej postaci.(dd-mm-rrrr)"
+                placeholder="Data urodzenia twojej postaci.(dd-mm-rrrr)"
               />
             </form>
           </div>
@@ -44,7 +44,7 @@
                 type="text"
                 class="content-ic__element-form"
                 name="ic/idea"
-                label="Pomysł na twoją postać."
+                placeholder="Pomysł na twoją postać."
               />
             </form>
           </div>
@@ -57,7 +57,7 @@
                 type="text"
                 class="content-ic__element-form"
                 name="ic/action"
-                label="Kreatywna akcja z udziałem twojej postaci.(nie wymagane)"
+                placeholder="Kreatywna akcja z udziałem twojej postaci.(nie wymagane)"
               />
             </form>
           </div>
@@ -75,7 +75,7 @@
                 type="text"
                 class="content-ic__element-form"
                 name="ooc/old"
-                label="Twój wiek"
+                placeholder="Twój wiek"
               />
             </form>
           </div>
@@ -88,7 +88,7 @@
                 type="text"
                 class="content-ic__element-form"
                 name="ooc/rpKnow"
-                label="Co wiesz o RP"
+                placeholder="Co wiesz o RP"
               />
             </form>
           </div>
@@ -101,7 +101,7 @@
                 type="text"
                 class="content-ic__element-form"
                 name="ooc/rpExperience"
-                label="Twoje doświadczenie w RP"
+                placeholder="Twoje doświadczenie w RP"
               />
             </form>
           </div>
@@ -114,7 +114,7 @@
                 type="text"
                 class="content-ic__element-form"
                 name="ooc/dc"
-                label="Twój nick discord np.MoneyIgos#2000"
+                placeholder="Twój nick discord np.MoneyIgos#2000"
               />
             </form>
           </div>
@@ -127,7 +127,7 @@
                 type="text"
                 class="content-ic__element-form"
                 name="ooc/old"
-                label="Twój Steam HEX np.11000011966ab8c"
+                placeholder="Twój Steam HEX np.11000011966ab8c"
               />
             </form>
           </div>
