@@ -125,6 +125,9 @@
           </div>
         </section>
       </article>
+      <div class="send-button-wrapper">
+        <button class="send-button">Wyślij Aplikację</button>
+      </div>
     </main>
   </div>
 </template>
@@ -186,10 +189,31 @@ export default {
       border-radius: 20px;
       border: vars.$darker-color solid 2px;
       text-align: center;
+      outline: none;
+
+      &:hover {
+        background-color: vars.$darker-color;
+      }
     }
   }
   &-half {
     height: 50vh;
+  }
+}
+.send-button {
+  width: 300px;
+  margin-bottom: 150px;
+  height: 100px;
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+  font-size: 24px;
+  font-family: sans-serif;
+  background-color: vars.$dark-color;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: vars.$darker-color;
   }
 }
 </style>
