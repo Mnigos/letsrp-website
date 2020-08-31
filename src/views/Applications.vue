@@ -3,7 +3,7 @@
     <div class="about">
       <div class="header__wrapper">
         <header class="header">
-          <h1>Podania</h1>
+          <h1>Aplikacje</h1>
         </header>
       </div>
       <div class="content_wrapper">
@@ -11,37 +11,37 @@
           <article class="content">
             <div>
               <button @click="go('wlApp')" class="content__element">
-                Podanie na Whitelist
+                Formularz na Whitelist
               </button>
             </div>
             <div class="content__element">
               <router-link to="/Applications/sup">
-                Podanie na Supporta
+                Formularz na Support
               </router-link>
             </div>
             <div class="content__element">
               <router-link to="/Applications/lspd">
-                Podanie na frakcję LSPD
+                Formularz na frakcję LSPD
               </router-link>
             </div>
             <div class="content__element">
               <router-link to="/Applications/ems">
-                Podanie na frakcję EMS
+                Formularz na frakcję EMS
               </router-link>
             </div>
             <div class="content__element">
               <router-link to="/Applications/lscm">
-                Podanie na frakcję LSCM
+                formularz na frakcję LSCM
               </router-link>
             </div>
             <div class="content__element">
               <router-link to="/Applications/firm"
-                >Podanie na Firmę</router-link
+                >Formularz na Firmę</router-link
               >
             </div>
             <div class="content__element">
               <router-link to="/Applications/org">
-                Podanie na Organizację Przestępczą
+                Formularz na Organizację Przestępczą
               </router-link>
             </div>
 
@@ -55,7 +55,7 @@
 
 <script>
 import { h } from 'vue';
-import wlApp from './../../components/wlApp.vue';
+import wlApp from './../components/wlApp.vue';
 
 const pages = {
   wlApp,
@@ -78,8 +78,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@use './../../styles/vars';
+<style lang="scss" scooped>
+@use './../styles/vars';
 
 .content__wrapper {
   display: flex;

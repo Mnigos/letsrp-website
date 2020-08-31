@@ -12,7 +12,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scooped>
 @use "./../styles/vars.scss";
 
 .logo {

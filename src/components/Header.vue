@@ -38,16 +38,18 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scooped>
 @use './../styles/vars';
 
 .header {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  text-align: center;
+  text-align: flex-start;
+  width: 40vw;
 
   &__description {
+    width: 100%;
     &-logo {
       height: 15vh;
       font-family: 'Anton', sans-serif;
@@ -66,6 +68,7 @@ export default {
   }
 
   &__socials {
+    flex-wrap: wrap;
     &-links {
       &-button {
         background-color: vars.$dark-color;
