@@ -225,7 +225,7 @@ export default {
 
     &--header {
       font-size: 1.2em;
-      margin-top: 240px;
+      margin-top: 350px;
 
       &--first {
         margin-top: 20px;
