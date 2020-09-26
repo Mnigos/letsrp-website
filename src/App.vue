@@ -20,6 +20,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 body {
+  background-image: url('./assets/background.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow-x: hidden;
   margin: 0 !important;
   color: #fff;
