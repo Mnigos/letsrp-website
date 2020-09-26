@@ -73,7 +73,6 @@ h2 {
 }
 
 .header {
-  padding: 0;
   height: 30vh;
   &__description {
     width: 100%;
@@ -151,6 +150,94 @@ h2 {
           &:visited {
             color: #fff;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 720px) {
+  .header {
+    padding: 0;
+    height: 60vh;
+    &__description {
+      height: 20vh;
+      width: 100%;
+
+      &-logo {
+        height: 150px;
+
+        &__wrapper {
+          font-size: 60px;
+        }
+      }
+
+      &-label {
+        font-size: 22.8px;
+      }
+    }
+
+    &__socials {
+      &-label {
+        font-size: 30px;
+      }
+
+      &-links {
+        &__button {
+          border-radius: 25px;
+
+          height: 80px;
+          width: 320px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .logo-wrapper {
+    img {
+      display: block;
+      width: 300px;
+    }
+  }
+
+  .header {
+    height: 60vh;
+    &__description {
+      height: 20vh;
+      width: 100%;
+
+      &-logo {
+        height: 150px;
+
+        &__wrapper {
+          font-size: 60px;
+        }
+      }
+
+      &-label {
+        font-size: 22.8px;
+      }
+    }
+
+    &__socials {
+      &-label {
+        font-size: 30px;
+      }
+
+      &-links {
+        &__button {
+          border-radius: 25px;
+
+          height: 80px;
+          width: 320px;
         }
       }
     }
