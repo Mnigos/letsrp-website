@@ -6,17 +6,17 @@
     <div class="header__wrapper">
       <header class="header">
         <div class="header__description">
-          <h1>
-            <div class="header__description-logo__wrapper">
-              <div class="eader__description-logo">
+          <div class="header__description-logo__wrapper">
+            <div class="header__description-logo">
+              <h1>
                 <span class="header__description-logo--left">Let's </span>
                 <span>RP</span>
-              </div>
+              </h1>
             </div>
-            <div class="header__description-label">
-              <p>Polski serwer RolePlay</p>
-            </div>
-          </h1>
+          </div>
+          <div class="header__description-label">
+            <h2>Polski serwer RolePlay</h2>
+          </div>
         </div>
         <div class="header__socials">
           <div class="header__socials-label">
@@ -54,6 +54,11 @@ body {
   align-items: flex-start;
 }
 
+h1,
+h2 {
+  margin: 0;
+}
+
 .wrapper {
   height: 100vh;
   widows: 100vw;
@@ -69,11 +74,14 @@ body {
 
 .header {
   padding: 0;
-  height: 10vh;
+  height: 30vh;
   &__description {
     width: 100%;
+
     &-logo {
-      height: 15vh;
+      height: 120px;
+      width: 100%;
+      text-align: center;
 
       &__wrapper {
         display: flex;
@@ -81,13 +89,20 @@ body {
         justify-content: center;
         font-family: 'Anton', sans-serif;
         font-weight: 600;
-        font-size: 100px;
+        font-size: 50px;
         letter-spacing: 1px;
       }
 
       &--left {
         color: vars.$green-color;
       }
+    }
+
+    &-label {
+      display: flex;
+      justify-content: center;
+      margin-top: 5px;
+      font-size: 19px;
     }
   }
 }
