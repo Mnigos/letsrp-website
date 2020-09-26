@@ -23,13 +23,13 @@
             <p>Możesz nas znaleźć na:</p>
           </div>
           <div class="header__socials-links">
-            <div class="header__socials-links-button">
+            <div class="header__socials-links__button">
               <a href="https://discord.gg/Ffrh3KY" target="_blank">Discord</a>
             </div>
-            <div class="header__socials-links-button">
+            <div class="header__socials-links__button">
               <a href="https://twitter.com/letsrp2" target="_blank">Twitter</a>
             </div>
-            <div class="header__socials-links-button">
+            <div class="header__socials-links__button">
               <a href="https://patronite.pl/letsrp" target="_blank">
                 Patronite
               </a>
@@ -61,7 +61,7 @@ h2 {
 
 .wrapper {
   height: 100vh;
-  widows: 100vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
 }
@@ -89,7 +89,7 @@ h2 {
         justify-content: center;
         font-family: 'Anton', sans-serif;
         font-weight: 600;
-        font-size: 50px;
+        font-size: 47px;
         letter-spacing: 1px;
       }
 
@@ -102,7 +102,57 @@ h2 {
       display: flex;
       justify-content: center;
       margin-top: 5px;
-      font-size: 19px;
+      font-size: 18px;
+    }
+  }
+
+  &__socials {
+    margin-top: 50px;
+    text-align: center;
+
+    &-label {
+      font-size: 27px;
+    }
+
+    &-links {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+
+      &__button {
+        background-color: vars.$dark-color;
+        margin: 10px;
+        border-radius: 20px;
+        color: #fff;
+
+        height: 60px;
+        width: 280px;
+
+        &:hover {
+          background-color: vars.$darker-color;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          -webkit-appearance: button;
+          -moz-appearance: button;
+          appearance: button;
+          text-decoration: none;
+
+          height: 100%;
+          width: 100%;
+
+          &:hover {
+            color: #fff;
+          }
+          &:visited {
+            color: #fff;
+          }
+        }
+      }
     }
   }
 }
