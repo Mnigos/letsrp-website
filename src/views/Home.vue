@@ -7,9 +7,11 @@
       <header class="header">
         <div class="header__description">
           <h1>
-            <div class="header__description-logo">
-              <span class="header__description-logo--left">Let's </span>
-              <span>RP</span>
+            <div class="header__description-logo__wrapper">
+              <div class="eader__description-logo">
+                <span class="header__description-logo--left">Let's </span>
+                <span>RP</span>
+              </div>
             </div>
             <div class="header__description-label">
               <p>Polski serwer RolePlay</p>
@@ -28,9 +30,9 @@
               <a href="https://twitter.com/letsrp2" target="_blank">Twitter</a>
             </div>
             <div class="header__socials-links-button">
-              <a href="https://patronite.pl/letsrp" target="_blank"
-                >Patronite</a
-              >
+              <a href="https://patronite.pl/letsrp" target="_blank">
+                Patronite
+              </a>
             </div>
           </div>
         </div>
@@ -52,15 +54,40 @@ body {
   align-items: flex-start;
 }
 
-@media (max-width: 480px) {
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-  }
+.wrapper {
+  height: 100vh;
+  widows: 100vw;
+  display: flex;
+  flex-direction: column;
+}
 
-  .logo-wrapper {
-    img {
-      display: none;
+.logo-wrapper {
+  img {
+    display: none;
+  }
+}
+
+.header {
+  padding: 0;
+  height: 10vh;
+  &__description {
+    width: 100%;
+    &-logo {
+      height: 15vh;
+
+      &__wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        font-family: 'Anton', sans-serif;
+        font-weight: 600;
+        font-size: 100px;
+        letter-spacing: 1px;
+      }
+
+      &--left {
+        color: vars.$green-color;
+      }
     }
   }
 }
