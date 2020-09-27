@@ -140,6 +140,7 @@ h2 {
           -moz-appearance: button;
           appearance: button;
           text-decoration: none;
+          color: #fff;
 
           height: 100%;
           width: 100%;
