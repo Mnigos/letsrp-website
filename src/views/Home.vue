@@ -195,14 +195,18 @@ h2 {
   }
 }
 
-@media (min-width: 1024px) {
-  body {
+@media (min-width: 1250px) {
+  .wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 
   .logo-wrapper {
+    margin: 150px;
+    height: 100vh;
+    width: 50vw;
+
     img {
       display: block;
       width: 300px;
@@ -211,36 +215,39 @@ h2 {
 
   .header {
     height: 60vh;
-    &__description {
-      height: 20vh;
-      width: 100%;
 
-      &-logo {
-        height: 150px;
-
-        &__wrapper {
-          font-size: 60px;
-        }
-      }
-
-      &-label {
-        font-size: 22.8px;
-      }
+    &__wrapper {
+      margin: 100px;
+      width: 50vw;
+      height: 100vh;
     }
+  }
+}
+@media (min-width: 1500px) {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-    &__socials {
-      &-label {
-        font-size: 30px;
-      }
+  .logo-wrapper {
+    margin: 150px;
+    height: 100vh;
+    width: 50vw;
 
-      &-links {
-        &__button {
-          border-radius: 25px;
+    img {
+      display: block;
+      width: 400px;
+    }
+  }
 
-          height: 80px;
-          width: 320px;
-        }
-      }
+  .header {
+    height: 60vh;
+
+    &__wrapper {
+      margin: 100px;
+      width: 50vw;
+      height: 100vh;
     }
   }
 }
