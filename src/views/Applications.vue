@@ -14,35 +14,35 @@
                 Formularz na Whitelist
               </button>
             </div>
-            <div class="content__element">
-              <router-link to="/Applications/sup">
+            <div>
+              <button to="/Applications/sup" class="content__element">
                 Formularz na Support
-              </router-link>
+              </button>
             </div>
-            <div class="content__element">
-              <router-link to="/Applications/lspd">
+            <div>
+              <button to="/Applications/lspd" class="content__element">
                 Formularz na frakcję LSPD
-              </router-link>
+              </button>
             </div>
-            <div class="content__element">
-              <router-link to="/Applications/ems">
+            <div>
+              <button to="/Applications/ems" class="content__element">
                 Formularz na frakcję EMS
-              </router-link>
+              </button>
             </div>
-            <div class="content__element">
-              <router-link to="/Applications/lscm">
+            <div>
+              <button to="/Applications/lscm" class="content__element">
                 formularz na frakcję LSCM
-              </router-link>
+              </button>
             </div>
-            <div class="content__element">
-              <router-link to="/Applications/firm"
-                >Formularz na Firmę</router-link
-              >
+            <div>
+              <button to="/Applications/firm" class="content__element">
+                Formularz na Firmę
+              </button>
             </div>
-            <div class="content__element">
-              <router-link to="/Applications/org">
+            <div>
+              <button to="/Applications/org" class="content__element">
                 Formularz na Organizację Przestępczą
-              </router-link>
+              </button>
             </div>
 
             <component :is="componentToShow"></component>
@@ -78,75 +78,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scooped>
+<style lang="scss" scoped>
 @use './../styles/vars';
-
-.content__wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header {
-  width: 100%;
-}
-
-.content__wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  //flex-direction: column;
-  flex-wrap: wrap;
-
-  &__element {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: 25px;
-    background-color: vars.$dark-color;
-    width: 80vw;
-    margin: 10px;
-    height: 100px;
-
-    &:hover {
-      background-color: vars.$darker-color;
-    }
-
-    a {
-      color: #fff;
-      text-decoration: none;
-
-      &:hover {
-        color: #fff;
-        text-decoration: none;
-      }
-
-      &:visited {
-        color: #fff;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-button {
-  color: #fff;
-  text-decoration: none;
-  outline: none;
-  font-size: 24px;
-  font-family: sans-serif;
-}
-
-@media (min-width: 1024px) {
-  .content__element {
-    width: 30vw;
-    margin: 30px 40px;
-  }
-}
+@import './../styles/applications';
 </style>
