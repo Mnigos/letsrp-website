@@ -194,12 +194,18 @@ h2 {
   }
 
   .header {
-    height: 60vh;
+    margin: 0;
+    height: 100vh;
 
     &__wrapper {
       margin: 100px;
       width: 50vw;
       height: 100vh;
+    }
+
+    &__description {
+      height: 20%;
+      min-height: 150px;
     }
   }
 }

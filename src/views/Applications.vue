@@ -1,5 +1,5 @@
 <template>
-  <div class="application">
+  <div class="wrapper">
     <div class="about">
       <div class="header__wrapper">
         <header class="header">
