@@ -47,8 +47,7 @@ body {
     margin: 10px 10px 0 10px;
 
     &:hover {
-      transition: 0.4s ease-in;
-      border-bottom: solid 10px #fff;
+      border-bottom: solid 2px #fff;
       cursor: pointer;
     }
   }
