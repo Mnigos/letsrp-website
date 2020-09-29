@@ -37,7 +37,6 @@
       outline: none;
       font-size: 24px;
       font-family: sans-serif;
-
       &:visited {
         color: #fff;
       }
@@ -54,6 +53,16 @@
     width: 330px;
     margin: 10px;
     height: 100px;
+    transition: .35s ease-in;
+
+    &:hover {
+      background-color: vars.$darker-color;
+      transform: translate3d(-15px, 0, 0);
+
+      &::after {
+        transform: translate3d(-15px, 0, 0);
+      }
+    }
   }
 }
 
@@ -81,7 +90,6 @@
 
     &__element {
       width: 30vw;
-      //margin: 40px;
     }
   }
 }
