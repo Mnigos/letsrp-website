@@ -34,7 +34,6 @@
       background-color: vars.$dark-color;
       color: #fff;
       text-decoration: none;
-      outline: none;
       font-size: 24px;
       font-family: sans-serif;
       &:visited {
@@ -62,6 +61,10 @@
       &::after {
         transform: translate3d(-15px, 0, 0);
       }
+    }
+
+    &:active {
+      border: vars.$green-color solid 2px;
     }
   }
 }
