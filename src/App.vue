@@ -45,10 +45,26 @@ body {
 
   &__element {
     margin: 10px 10px 0 10px;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 3px;
+      background-color: #fff;
+      position: absolute;
+      bottom: -15%;
+      left: 50%;
+      transition: 0.5s ease-in-out;
+    }
 
     &:hover {
-      border-bottom: solid 2px #fff;
       cursor: pointer;
+
+      &::after {
+        transform: translateX(-50%);
+        width: 100%;
+      }
     }
   }
 

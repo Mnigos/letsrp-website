@@ -56,10 +56,10 @@
 
     &:hover {
       background-color: vars.$darker-color;
-      transform: translate3d(-15px, 0, 0);
+      transform: translatex(-15px);
 
       &::after {
-        transform: translate3d(-15px, 0, 0);
+        transform: translatex(-15px);
       }
     }
 

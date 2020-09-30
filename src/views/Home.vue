@@ -48,6 +48,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use './../styles/vars';
 @import './../styles/home';
 </style>
