@@ -1,12 +1,12 @@
 <template>
-  <div class="container">
+  <div class="wrapper">
     <header class="header">
       <h2>Podanie na Whitelist</h2>
     </header>
     <main>
       <article class="form">
         <section class="form-half">
-          <div class="form__element--header--first">
+          <div class="form__element--header">
             <h3>Strefa IC</h3>
           </div>
           <div class="form__element">
@@ -193,88 +193,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scooped>
-@use './../styles/vars';
-
-.container {
-  background-color: rgba(32, 32, 33, 0.5);
-  min-height: 100vh;
-  width: 70vw;
-  display: flex;
-  //align-items: flex-end;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  text-align: center;
-  border-radius: 20px;
-}
-.header {
-  padding-top: 15vh;
-  width: 100vw;
-  height: 10vh;
-  margin: 0;
-  font-size: 1.3em;
-}
-.form {
-  min-height: 200vh;
-  width: 50vw;
-
-  &__element {
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    &--header {
-      font-size: 1.2em;
-      margin-top: 350px;
-
-      &--first {
-        margin-top: 20px;
-      }
-    }
-    &-label {
-      width: 50vw;
-      height: 4vh;
-    }
-    input {
-      width: 40vw;
-      height: 7vh;
-      margin: 20px;
-      background-color: vars.$dark-color;
-      color: #fff;
-      border-radius: 20px;
-      border: vars.$darker-color solid 2px;
-      text-align: center;
-      outline: none;
-
-      &:hover {
-        background-color: vars.$darker-color;
-      }
-    }
-  }
-  &-half {
-    height: 50vh;
-  }
-}
-.send-button {
-  width: 300px;
-  margin-bottom: 150px;
-  height: 100px;
-  color: #fff;
-  text-decoration: none;
-  outline: none;
-  font-size: 24px;
-  font-family: sans-serif;
-  background-color: vars.$dark-color;
-  border-radius: 20px;
-
-  &:hover {
-    background-color: vars.$darker-color;
-  }
-
-  &-message {
-    color: #dd0000;
-    margin: 20px;
-    font-size: 0.8em;
-  }
-}
+<style lang="scss" scoped>
+@import './../styles/wlApp';
 </style>

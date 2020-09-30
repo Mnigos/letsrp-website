@@ -1,0 +1,77 @@
+@use './../styles/vars';
+
+.wrapper {
+  background-color: rgba(32, 32, 33, 0.5);
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.header {
+  padding-top: 0;
+  width: 100vw;
+  margin: 0;
+  font-size: 1.3em;
+}
+.form {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  &__element {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &--header {
+      font-size: 1.2em;
+      margin: 20px;
+    }
+    &-label {
+      width: 100vw;
+      height: 40px;
+    }
+    input {
+      width: 90vw;
+      height: 7vh;
+      margin: 20px;
+      background-color: vars.$dark-color;
+      color: #fff;
+      border-radius: 20px;
+      border: vars.$darker-color solid 2px;
+      text-align: center;
+      outline: none;
+
+      &:hover {
+        background-color: vars.$darker-color;
+      }
+    }
+  }
+}
+// .send-button {
+//   width: 300px;
+//   margin-bottom: 150px;
+//   height: 100px;
+//   color: #fff;
+//   text-decoration: none;
+//   outline: none;
+//   font-size: 24px;
+//   font-family: sans-serif;
+//   background-color: vars.$dark-color;
+//   border-radius: 20px;
+
+//   &:hover {
+//     background-color: vars.$darker-color;
+//   }
+
+//   &-message {
+//     color: #dd0000;
+//     margin: 20px;
+//     font-size: 0.8em;
+//   }
+// }

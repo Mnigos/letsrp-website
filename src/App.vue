@@ -56,15 +56,12 @@ body {
       bottom: -15%;
       left: 50%;
       transition: 0.5s ease-in-out;
+      cursor: pointer;
     }
 
-    &:hover {
-      cursor: pointer;
-
-      &::after {
-        transform: translateX(-50%);
-        width: 100%;
-      }
+    &:hover::after {
+      transform: translateX(-50%);
+      width: 100%;
     }
   }
 
