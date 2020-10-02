@@ -167,27 +167,35 @@ export default {
   },
   methods: {
     submit() {
+      const messagesArray = [];
+
       if (!this.name || this.name.length < 8)
-        this.message =
-          'Imię i nazwisko twojej postaci musi zawierać co najmniej 8 znaków.';
+        messagesArray.push(
+          'Imię i nazwisko twojej postaci musi zawierać co najmniej 8 znaków'
+        );
       if (!this.date)
-        this.message += '<br /> Musisz podać datę urodzenia twojej postaci.';
+        messagesArray.push('<br /> Musisz podać datę urodzenia twojej postaci');
       if (!this.idea)
-        this.message += '<br /> Musisz podać pomysł na twoją postać.';
+        messagesArray.push('<br /> Musisz podać pomysł na twoją postać');
       if (!this.story || this.story.length < 200)
-        this.message +=
-          '<br /> Historia twojej postaci musi zawierać conajmniej 200 znaków.';
-      if (!this.old) this.message += '<br /> Musisz podać swój wiek.';
+        messagesArray.push(
+          '<br /> Historia twojej postaci musi zawierać conajmniej 200 znaków'
+        );
+      if (!this.old) messagesArray.push('<br /> Musisz podać swój wiek');
       if (!this.rpKnow)
-        this.message +=
-          '<br /> Musisz podać swoją wiedzę o rozgrywkach Roleplay.';
+        messagesArray.push(
+          '<br /> Musisz podać swoją wiedzę o rozgrywkach Roleplay'
+        );
       if (!this.experience)
-        this.message +=
-          '<br /> Musisz podać swoje doświadczenie w rozgrywkach Roleplay.';
+        messagesArray.push(
+          '<br /> Musisz podać swoje doświadczenie w rozgrywkach Roleplay'
+        );
       if (!this.dc || this.dc.length < 5)
-        this.message += '<br /> Niepoprawny nick discord.';
+        messagesArray.push('<br /> Niepoprawny nick discord');
       if (!this.hex || this.hex.length < 15)
-        this.message += '<br /> Niepoprawny steam HEX ID';
+        messagesArray.push('<br /> Niepoprawny steam HEX ID');
+
+      this.message = messagesArray.splice('');
     },
   },
 };
