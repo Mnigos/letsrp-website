@@ -35,47 +35,47 @@
               />
             </form>
           </div>
-          <div class="form__element">
+          <div class="form__element--medium">
             <form>
               <div class="form__element-label">
                 <b>IC</b> | Pomysł na Postać
               </div>
-              <input
+              <textarea
                 type="text"
                 class="form__element-input"
                 name="ic/idea"
                 v-model="idea"
                 id="form__element-idea"
                 placeholder="Pomysł na twoją postać."
-              />
+              ></textarea>
             </form>
           </div>
-          <div class="form__element">
+          <div class="form__element--large">
             <form>
               <div class="form__element-label">
-                <b>IC</b> | Pomysł na Postać
+                <b>IC</b> | Hisroria postaci
               </div>
-              <input
+              <textarea
                 type="text"
                 class="form__element-input"
                 name="ic/story"
                 v-model="story"
                 id="form__element-story"
                 placeholder="Historia twojej postaci."
-              />
+              ></textarea>
             </form>
           </div>
-          <div class="form__element">
+          <div class="form__element--medium">
             <form>
-              <div class="form__element"><b>IC</b> | Kreatywna Akcja</div>
-              <input
+              <div class="form__element-label"><b>IC</b> | Kreatywna Akcja</div>
+              <textarea
                 type="text"
                 class="form__element-input"
                 name="ic/action"
                 v-model="action"
                 id="form__element-action"
                 placeholder="Kreatywna akcja z udziałem twojej postaci.(nie wymagane)"
-              />
+              ></textarea>
             </form>
           </div>
         </section>
@@ -96,31 +96,31 @@
               />
             </form>
           </div>
-          <div class="form__element">
+          <div class="form__element--medium">
             <form>
               <div class="form__element-label"><b>OOC</b> | Co wiesz o RP?</div>
-              <input
+              <textarea
                 type="text"
                 class="form__element-input"
                 name="ooc/rpKnow"
                 v-model="rpKnow"
                 id="form__element-rpKnow"
                 placeholder="Co wiesz o RP"
-              />
+              ></textarea>
             </form>
           </div>
           <div class="form__element">
             <form>
-              <div class="form__element-label">
+              <div class="form__element-label--medium">
                 <b>OOC</b> | Jakie masz doświadczenie w RP?
               </div>
-              <input
+              <textarea
                 type="text"
                 class="form__element-input"
                 name="ooc/experience"
                 v-model="experience"
                 placeholder="Twoje doświadczenie w RP"
-              />
+              ></textarea>
             </form>
           </div>
           <div class="form__element">
