@@ -109,9 +109,9 @@
               ></textarea>
             </form>
           </div>
-          <div class="form__element">
+          <div class="form__element--medium">
             <form>
-              <div class="form__element-label--medium">
+              <div class="form__element-label">
                 <b>OOC</b> | Jakie masz doświadczenie w RP?
               </div>
               <textarea
