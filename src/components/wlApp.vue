@@ -195,7 +195,23 @@ export default {
       if (!this.hex || this.hex.length < 15)
         messagesArray.push('<br /> Niepoprawny steam HEX ID');
 
-      this.message = messagesArray.splice('');
+      if (this.name) {
+        if (this.name.length > 8) messagesArray[0] = '';
+      }
+      if (this.date) messagesArray[1] = '';
+      if (this.idea) messagesArray[2] = '';
+      if (this.story) {
+        if (this.story.length > 200) messagesArray[3] = '';
+      }
+      if (this.old) messagesArray[4] = '';
+      if (this.rpKnow) messagesArray[5] = '';
+      if (this.experience) messagesArray[6] = '';
+      if (this.dc) messagesArray[7] = '';
+      if (this.hex) {
+        if (this.hex.length > 15) messagesArray[8] = '';
+      }
+
+      this.message = messagesArray.slice(0).join('');
     },
   },
 };
