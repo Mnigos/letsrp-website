@@ -47,9 +47,14 @@
       border: vars.$darker-color solid 2px;
       text-align: center;
       outline: none;
+      transition: .35s ease-in;
 
       &:hover {
         background-color: vars.$darker-color;
+      }
+
+      &:focus {
+        border: vars.$green-color solid 2px;
       }
     }
 
@@ -78,9 +83,14 @@
         text-align: center;
         outline: none;
         resize: none;
+        transition: .35s ease-in;
 
         &:hover {
           background-color: vars.$darker-color;
+        }
+
+        &:focus {
+          border: vars.$green-color solid 2px;
         }
       }
     }
@@ -110,9 +120,14 @@
         text-align: center;
         outline: none;
         resize: none;
+        transition: .35s ease-in;
 
         &:hover {
           background-color: vars.$darker-color;
+        }
+
+        &:focus {
+          border: vars.$green-color solid 2px;
         }
       }
     }
