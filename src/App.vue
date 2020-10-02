@@ -33,6 +33,12 @@ body {
   display: flex;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .navbar__wrapper {
   width: 100vw;
   height: 45px;

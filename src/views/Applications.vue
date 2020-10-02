@@ -51,11 +51,13 @@
       </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <script>
 import { h } from 'vue';
-import wlApp from './../components/wlApp.vue';
+import wlApp from '../components/wlApp.vue';
+import Footer from '../components/Footer';
 
 const pages = {
   wlApp,
@@ -63,6 +65,9 @@ const pages = {
 
 export default {
   name: 'Applications',
+  components: {
+    Footer,
+  },
   data() {
     return {
       componentToShow: {
