@@ -167,14 +167,18 @@ export default {
   },
   methods: {
     submit() {
+      const dateRegexp = /^([0-2][0-9]|[0-9]|3[0-1])-(([0][0-9])|[0-9]|1[0-2])-[0-9]{4}$/;
+      const dcRegexp = /.{1,}#[0-9]{4}|[0-9]{18}$/;
       const messagesArray = [];
 
       if (!this.name || this.name.length < 8)
         messagesArray.push(
           'Imię i nazwisko twojej postaci musi zawierać co najmniej 8 znaków'
         );
-      if (!this.date)
-        messagesArray.push('<br /> Musisz podać datę urodzenia twojej postaci');
+      if (!this.date || !dateRegexp.test(this.date))
+        messagesArray.push(
+          '<br /> Musisz podać datę urodzenia twojej postaci w odpowiednim formacie'
+        );
       if (!this.idea)
         messagesArray.push('<br /> Musisz podać pomysł na twoją postać');
       if (!this.story || this.story.length < 200)
@@ -190,7 +194,7 @@ export default {
         messagesArray.push(
           '<br /> Musisz podać swoje doświadczenie w rozgrywkach Roleplay'
         );
-      if (!this.dc || this.dc.length < 5)
+      if (!this.dc || !dcRegexp.test(this.dc))
         messagesArray.push('<br /> Niepoprawny nick discord');
       if (!this.hex || this.hex.length < 15)
         messagesArray.push('<br /> Niepoprawny steam HEX ID');
@@ -198,7 +202,9 @@ export default {
       if (this.name) {
         if (this.name.length > 8) messagesArray[0] = '';
       }
-      if (this.date) messagesArray[1] = '';
+      if (this.date) {
+        if (dateRegexp.test(this.date)) messagesArray[1] = '';
+      }
       if (this.idea) messagesArray[2] = '';
       if (this.story) {
         if (this.story.length > 200) messagesArray[3] = '';
@@ -206,7 +212,9 @@ export default {
       if (this.old) messagesArray[4] = '';
       if (this.rpKnow) messagesArray[5] = '';
       if (this.experience) messagesArray[6] = '';
-      if (this.dc) messagesArray[7] = '';
+      if (this.dc) {
+        if (dcRegexp.test(this.dc)) messagesArray[7] = '';
+      }
       if (this.hex) {
         if (this.hex.length > 15) messagesArray[8] = '';
       }
