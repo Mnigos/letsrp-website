@@ -1,6 +1,7 @@
 @use './../styles/vars';
 
-.wrapper {
+.wl-app {
+  height: 100%;
   background-color: rgba(32, 32, 33, 0.5);
   display: flex;
   justify-content: center;
@@ -8,7 +9,6 @@
   flex-wrap: wrap;
   border-radius: 20px;
   text-align: center;
-  height: 300vh;
 }
 
 .header {
@@ -39,7 +39,7 @@
     }
     input {
       width: 90vw;
-      height: 7vh;
+      height: 50px;
       margin: 20px;
       background-color: vars.$dark-color;
       color: #fff;
@@ -56,7 +56,7 @@
 }
 .send-button {
   width: 300px;
-  margin-bottom: 150px;
+  margin-top: 50px;
   height: 100px;
   color: #fff;
   text-decoration: none;
@@ -76,9 +76,33 @@
     }
   }
 
+  &-wrapper {
+    margin-bottom: 50px;
+  }
+
   &-message {
     color: #dd0000;
     margin: 20px;
     font-size: 0.8em;
+  }
+}
+
+@media (min-width: 900px) {
+  .form__element {
+    input {
+      width: 80vw;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .wl-app {
+    width: 70vw;
+  }
+
+  .form__element {
+    input {
+      width: 40vw;
+    }
   }
 }

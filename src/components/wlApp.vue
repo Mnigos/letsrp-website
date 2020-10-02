@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wl-app">
     <header class="header">
       <h2>Podanie na Whitelist</h2>
     </header>
@@ -150,8 +150,8 @@
         </section>
       </article>
       <div class="send-button-wrapper">
-        <div class="send-button-message" v-html="message"></div>
         <button class="send-button" @click="submit()">Wyślij Aplikację</button>
+        <div class="send-button-message" v-html="message"></div>
       </div>
     </main>
   </div>
