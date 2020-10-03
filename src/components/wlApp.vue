@@ -74,7 +74,7 @@
                 name="ic/action"
                 v-model="action"
                 id="form__element-action"
-                placeholder="Kreatywna akcja z udziałem twojej postaci.(nie wymagane)"
+                placeholder="Kreatywna akcja z udziałem twojej postaci."
               ></textarea>
             </form>
           </div>
