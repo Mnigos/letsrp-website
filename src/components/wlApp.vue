@@ -149,9 +149,9 @@
           </div>
         </section>
       </article>
-      <div class="send-button-wrapper">
+      <div class="send-button__wrapper">
         <button class="send-button" @click="submit()">Wyślij Aplikację</button>
-        <div class="send-button-message" v-html="message"></div>
+        <div class="send-button__message" v-html="message"></div>
       </div>
     </main>
   </div>
