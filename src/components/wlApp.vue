@@ -171,7 +171,6 @@ export default {
       const dcRegexp = /.{1,}#[0-9]{4}|[0-9]{18}$/;
       const messagesArray = [];
 
-      console.log(1);
       const validationLength = (keys, expectedLength, message) => {
         keys.forEach((key, i) => {
           if (key) {
