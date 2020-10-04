@@ -103,7 +103,7 @@
                 type="text"
                 class="form__element-input"
                 name="ooc/rpKnow"
-                v-model="rpKnow"
+                v-model="know"
                 id="form__element-rpKnow"
                 placeholder="Co wiesz o RP"
               ></textarea>
@@ -171,53 +171,57 @@ export default {
       const dcRegexp = /.{1,}#[0-9]{4}|[0-9]{18}$/;
       const messagesArray = [];
 
-      if (!this.name || this.name.length < 8)
-        messagesArray.push(
-          'Imię i nazwisko twojej postaci musi zawierać co najmniej 8 znaków'
-        );
-      if (!this.date || !dateRegexp.test(this.date))
-        messagesArray.push(
-          '<br /> Musisz podać datę urodzenia twojej postaci w odpowiednim formacie'
-        );
-      if (!this.idea)
-        messagesArray.push('<br /> Musisz podać pomysł na twoją postać');
-      if (!this.story || this.story.length < 200)
-        messagesArray.push(
-          '<br /> Historia twojej postaci musi zawierać conajmniej 200 znaków'
-        );
-      if (!this.old) messagesArray.push('<br /> Musisz podać swój wiek');
-      if (!this.rpKnow)
-        messagesArray.push(
-          '<br /> Musisz podać swoją wiedzę o rozgrywkach Roleplay'
-        );
-      if (!this.experience)
-        messagesArray.push(
-          '<br /> Musisz podać swoje doświadczenie w rozgrywkach Roleplay'
-        );
-      if (!this.dc || !dcRegexp.test(this.dc))
-        messagesArray.push('<br /> Niepoprawny nick discord');
-      if (!this.hex || this.hex.length < 15)
-        messagesArray.push('<br /> Niepoprawny steam HEX ID');
+      console.log(1);
+      const validationLength = (keys, expectedLength, message) => {
+        keys.forEach((key, i) => {
+          if (key) {
+            if (key.length < expectedLength[i]) messagesArray.push(message[i]);
+          } else messagesArray.push(message[i]);
+        });
+      };
 
-      if (this.name) {
-        if (this.name.length > 8) messagesArray[0] = '';
-      }
-      if (this.date) {
-        if (dateRegexp.test(this.date)) messagesArray[1] = '';
-      }
-      if (this.idea) messagesArray[2] = '';
-      if (this.story) {
-        if (this.story.length > 200) messagesArray[3] = '';
-      }
+      const validationRegexp = (keys, expectedRegexp, message) => {
+        keys.forEach((key, i) => {
+          if (key) {
+            if (!expectedRegexp[i].test(key)) messagesArray.push(message[i]);
+          } else {
+            messagesArray.push(message[i]);
+          }
+        });
+      };
+
+      validationRegexp(
+        [this.date, this.dc],
+        [dateRegexp, dcRegexp],
+        [
+          'Musisz podać datę urodzenia twojej postaci w odpowiednim formacie',
+          '<br /> Niepoprawny nick discord',
+        ]
+      );
+
+      validationLength(
+        [
+          this.name,
+          this.idea,
+          this.story,
+          this.action,
+          this.know,
+          this.experience,
+          this.hex,
+        ],
+        [8, 20, 200, 50, 0, 15, 10],
+        [
+          '<br />Imię i nazwisko twojej postaci musi zawierać co najmniej 8 znaków',
+          '<br /> Musisz podać pomysł na twoją postać',
+          '<br /> Historia twojej postaci musi zawierać conajmniej 200 znaków',
+          '<br /> Kreatywna akcja musi zawierać co najmniej 50 znaków',
+          '<br /> Musisz podać swoją wiedzę o rozgrywkach Roleplay',
+          '<br /> Musisz podać swoje doświadczenie w rozgrywkach Roleplay',
+          '<br /> Niepoprawny steam HEX ID',
+        ]
+      );
+      if (!this.old) messagesArray.push('<br /> Musisz podać swój wiek');
       if (this.old) messagesArray[4] = '';
-      if (this.rpKnow) messagesArray[5] = '';
-      if (this.experience) messagesArray[6] = '';
-      if (this.dc) {
-        if (dcRegexp.test(this.dc)) messagesArray[7] = '';
-      }
-      if (this.hex) {
-        if (this.hex.length > 15) messagesArray[8] = '';
-      }
 
       this.message = messagesArray.slice(0).join('');
     },
