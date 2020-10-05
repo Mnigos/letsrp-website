@@ -4,7 +4,7 @@
       <h2>Formularz na Whitelist</h2>
     </header>
     <main>
-      <article class="form">
+      <article class="form" id="form">
         <section class="form-half">
           <div class="form__element--header">
             <h3>Strefa IC</h3>

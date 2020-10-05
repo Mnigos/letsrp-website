@@ -20,6 +20,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 body {
+  scroll-behavior: smooth;
   background-image: url('./assets/background.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;

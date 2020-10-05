@@ -10,7 +10,13 @@
         <main>
           <article class="content">
             <div>
-              <button @click="go('wlApp')" class="content__element">
+              <button
+                @click="go('wlApp')"
+                class="content__element"
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-delay="300"
+              >
                 Formularz na Whitelist
               </button>
             </div>
