@@ -10,13 +10,7 @@
         <main>
           <article class="content">
             <div>
-              <button
-                @click="go('wlApp')"
-                class="content__element"
-                data-aos="fade-up"
-                data-aos-easing="ease"
-                data-aos-delay="300"
-              >
+              <button @click="go('wlApp')" class="content__element">
                 Formularz na Whitelist
               </button>
             </div>
@@ -51,7 +45,7 @@
               </button>
             </div>
 
-            <component :is="componentToShow"></component>
+            <component :is="componentToShow" ref="component"></component>
           </article>
         </main>
       </div>
@@ -84,6 +78,11 @@ export default {
   methods: {
     go(where) {
       this.componentToShow = pages[where];
+      //console.log(this.$refs.component.getBoundingClientRect().top);
+      window.scrollTo({
+        top: 900,
+        behavior: 'smooth',
+      });
     },
   },
 };
