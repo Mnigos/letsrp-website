@@ -76,11 +76,11 @@ export default {
     };
   },
   methods: {
-    go(where) {
+    async go(where) {
       this.componentToShow = pages[where];
-      //console.log(this.$refs.component.getBoundingClientRect().top);
+      await this.$nextTick();
       window.scrollTo({
-        top: 900,
+        top: this.$refs.component.$el.getBoundingClientRect().top,
         behavior: 'smooth',
       });
     },

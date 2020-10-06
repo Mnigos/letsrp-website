@@ -20,6 +20,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 body {
+  position: sticky;
+  top: 10px;
   scroll-behavior: smooth;
   background-image: url('./assets/background.jpg');
   background-attachment: fixed;
@@ -46,6 +48,7 @@ body {
 }
 
 .navbar {
+  position: sticky;
   display: flex;
   justify-content: flex-end;
   margin-right: 3vw;
