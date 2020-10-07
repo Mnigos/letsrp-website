@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="navbar__wrapper">
+    <div class="navbar__wrapper" ref="nav">
       <nav class="navbar">
         <div class="navbar__element">
           <router-link to="/">Strona Główna</router-link>
@@ -14,14 +14,25 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted() {
+    window.addEventListener('scroll', () => {
+      this.$refs.nav.classList.toggle('sticky', window.scrollY > 0);
+    });
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll');
+  },
+};
+</script>
+
 <style lang="scss">
 @use './styles/vars';
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 body {
-  position: sticky;
-  top: 10px;
   scroll-behavior: smooth;
   background-image: url('./assets/background.jpg');
   background-attachment: fixed;
@@ -45,17 +56,22 @@ body {
 .navbar__wrapper {
   width: 100vw;
   height: 45px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  transition: 0.5s ease-in-out;
 }
 
 .navbar {
-  position: sticky;
   display: flex;
   justify-content: flex-end;
   margin-right: 3vw;
 
   &__element {
     margin: 10px 10px 0 10px;
-    position: relative;
+    position: sticky;
+    left: 0;
+    top: 0;
 
     &::after {
       content: '';
@@ -89,5 +105,10 @@ body {
       text-decoration: none;
     }
   }
+}
+
+.sticky {
+  background-color: vars.$dark-color;
+  opacity: 0.8;
 }
 </style>
