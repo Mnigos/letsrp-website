@@ -19,17 +19,17 @@
               />
             </form>
           </div>
-          <div class="form__element">
+          <div class="form__element--medium">
             <form>
               <div class="form__element-label">O sobie</div>
-              <input
+              <textarea
                 type="text"
                 class="form__element-input"
                 id="form__element-date"
                 v-model="about"
                 name="ic/date"
                 placeholder="Kilka zdań o sobie."
-              />
+              ></textarea>
             </form>
           </div>
           <div class="form__element--medium">
@@ -47,7 +47,7 @@
               ></textarea>
             </form>
           </div>
-          <div class="form__element--large">
+          <div class="form__element--medium">
             <form>
               <div class="form__element-label">
                 Twoje doświadczenie na tym stanowisku
@@ -62,19 +62,19 @@
               ></textarea>
             </form>
           </div>
-          <div class="form__element--medium">
+          <div class="form__element">
             <form>
               <div class="form__element-label">
-                Ile czasu dziennie jesteś w stanie poświęcić na serwer.
+                Ile czasu dziennie jesteś w stanie poświęcić na serwer
               </div>
-              <textarea
+              <input
                 type="text"
                 class="form__element-input"
                 name="ic/action"
                 v-model="hoursPerDay"
                 id="form__element-action"
                 placeholder="Ile godzin dziennie możesz poświęcić na serwer(Wpisz liczbę)."
-              ></textarea>
+              />
             </form>
           </div>
         </section>
@@ -94,7 +94,7 @@
           </div>
           <div class="form__element">
             <form>
-              <div class="form__element-label"><b>OOC</b> | Nick Discord</div>
+              <div class="form__element-label">Nick Discord</div>
               <input
                 type="text"
                 class="form__element-input"
@@ -159,37 +159,29 @@ export default {
       };
 
       validationRegexp(
-        [this.date, this.dc],
-        [dateRegexp, dcRegexp],
-        [
-          'Musisz podać datę urodzenia twojej postaci w odpowiednim formacie',
-          '<br /> Niepoprawny nick discord',
-        ]
+        [this.dc],
+        [dcRegexp],
+        ['<br /> Niepoprawny nick discord']
       );
 
       validationLength(
-        [
-          this.name,
-          this.idea,
-          this.story,
-          this.action,
-          this.know,
-          this.experience,
-          this.hex,
-        ],
-        [8, 20, 200, 50, 0, 15, 10],
+        [this.name, this.about, this.whyU, this.experience, this.hex],
+        [8, 20, 20, 20, 15],
         [
           '<br />Imię i nazwisko twojej postaci musi zawierać co najmniej 8 znaków',
-          '<br /> Musisz podać pomysł na twoją postać',
-          '<br /> Historia twojej postaci musi zawierać conajmniej 200 znaków',
-          '<br /> Kreatywna akcja musi zawierać co najmniej 50 znaków',
-          '<br /> Musisz podać swoją wiedzę o rozgrywkach Roleplay',
-          '<br /> Musisz podać swoje doświadczenie w rozgrywkach Roleplay',
+          '<br /> Musisz podać informację o sobie',
+          '<br /> Musisz podać informację dlaczego ty',
+          '<br /> Musisz podać swoje doświadczenie na tym stanowisku',
           '<br /> Niepoprawny steam HEX ID',
         ]
       );
       if (!this.old) messagesArray.push('<br /> Musisz podać swój wiek');
-      if (this.old) messagesArray[4] = '';
+      if (this.old) messagesArray[6] = '';
+      if (!this.hoursPerDay)
+        messagesArray.push(
+          '<br /> Musisz podać ile godzin dziennie jesteś w stanie spędzić'
+        );
+      if (this.hoursPerDay) messagesArray[7] = '';
 
       this.message = messagesArray.slice(0).join('');
     },
