@@ -1,7 +1,7 @@
 <template>
   <div class="wl-app">
     <header class="header">
-      <h2>Formularz na Whitelist</h2>
+      <h2>Formularz na Support</h2>
     </header>
     <main>
       <article class="form" id="form">
