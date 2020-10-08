@@ -6,60 +6,57 @@
     <main>
       <article class="form" id="form">
         <section class="form-half">
-          <div class="form__element--header">
-            <h3>Strefa IC</h3>
-          </div>
           <div class="form__element">
             <form>
-              <div class="form__element-label"><b>IC</b> | Imię i Nazwisko</div>
+              <div class="form__element-label">Imię</div>
               <input
                 type="text"
                 id="name"
                 v-model="name"
                 class="form__element-input"
                 name="ic/name"
-                placeholder="Imię i Nazwisko twojej postaci."
+                placeholder="Twoje imię."
               />
             </form>
           </div>
           <div class="form__element">
             <form>
-              <div class="form__element-label"><b>IC</b> | Data Urodzenia</div>
+              <div class="form__element-label">O sobie</div>
               <input
                 type="text"
                 class="form__element-input"
                 id="form__element-date"
-                v-model="date"
+                v-model="about"
                 name="ic/date"
-                placeholder="Data urodzenia twojej postaci.(dd-mm-rrrr)"
+                placeholder="Kilka zdań o sobie."
               />
             </form>
           </div>
           <div class="form__element--medium">
             <form>
               <div class="form__element-label">
-                <b>IC</b> | Pomysł na Postać
+                Dlaczego ty
               </div>
               <textarea
                 type="text"
                 class="form__element-input"
                 name="ic/idea"
-                v-model="idea"
+                v-model="whyU"
                 id="form__element-idea"
-                placeholder="Pomysł na twoją postać."
+                placeholder="Dlaczego właśnie ty powinieneś zostać supportem?"
               ></textarea>
             </form>
           </div>
           <div class="form__element--large">
             <form>
               <div class="form__element-label">
-                <b>IC</b> | Hisroria postaci
+                Twoje doświadczenie na tym stanowisku
               </div>
               <textarea
                 type="text"
                 class="form__element-input"
                 name="ic/story"
-                v-model="story"
+                v-model="experience"
                 id="form__element-story"
                 placeholder="Historia twojej postaci."
               ></textarea>
@@ -67,25 +64,24 @@
           </div>
           <div class="form__element--medium">
             <form>
-              <div class="form__element-label"><b>IC</b> | Kreatywna Akcja</div>
+              <div class="form__element-label">
+                Ile czasu dziennie jesteś w stanie poświęcić na serwer.
+              </div>
               <textarea
                 type="text"
                 class="form__element-input"
                 name="ic/action"
-                v-model="action"
+                v-model="hoursPerDay"
                 id="form__element-action"
-                placeholder="Kreatywna akcja z udziałem twojej postaci."
+                placeholder="Ile godzin dziennie możesz poświęcić na serwer(Wpisz liczbę)."
               ></textarea>
             </form>
           </div>
         </section>
         <section class="form-half">
-          <div class="form__element--header">
-            <h3>Strefa OOC</h3>
-          </div>
           <div class="form__element">
             <form>
-              <div class="form__element-label"><b>OOC</b> | Wiek</div>
+              <div class="form__element-label">Wiek</div>
               <input
                 type="text"
                 class="form__element-input"
@@ -94,33 +90,6 @@
                 id="form__element-old"
                 placeholder="Twój wiek"
               />
-            </form>
-          </div>
-          <div class="form__element--medium">
-            <form>
-              <div class="form__element-label"><b>OOC</b> | Co wiesz o RP?</div>
-              <textarea
-                type="text"
-                class="form__element-input"
-                name="ooc/rpKnow"
-                v-model="know"
-                id="form__element-rpKnow"
-                placeholder="Co wiesz o RP"
-              ></textarea>
-            </form>
-          </div>
-          <div class="form__element--medium">
-            <form>
-              <div class="form__element-label">
-                <b>OOC</b> | Jakie masz doświadczenie w RP?
-              </div>
-              <textarea
-                type="text"
-                class="form__element-input"
-                name="ooc/experience"
-                v-model="experience"
-                placeholder="Twoje doświadczenie w RP"
-              ></textarea>
             </form>
           </div>
           <div class="form__element">
@@ -137,7 +106,7 @@
           </div>
           <div class="form__element">
             <form>
-              <div class="form__element-label"><b>OOC</b> | Steam HEX</div>
+              <div class="form__element-label">Steam HEX</div>
               <input
                 type="text"
                 class="form__element-input"
@@ -159,7 +128,7 @@
 
 <script>
 export default {
-  name: 'wlApp',
+  name: 'supApp',
   data() {
     return {
       message: '',

@@ -15,7 +15,7 @@
               </button>
             </div>
             <div>
-              <button to="/Applications/sup" class="content__element">
+              <button @click="go('supApp')" class="content__element">
                 Formularz na Support
               </button>
             </div>
@@ -57,10 +57,12 @@
 <script>
 import { h } from 'vue';
 import wlApp from '../components/wlApp.vue';
+import supApp from '../components/supApp.vue';
 import Footer from '../components/Footer';
 
 const pages = {
   wlApp,
+  supApp,
 };
 
 export default {
