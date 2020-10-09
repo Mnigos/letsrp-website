@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/82186251-f01f-45ad-bd53-a3e684bed726/deploy-status)](https://app.netlify.com/sites/cyberpunk-date/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ba441d83-659e-480e-94cd-9b84ca994f6a/deploy-status)](https://app.netlify.com/sites/letsrp/deploys)
 
 # Let's RP Website
 
