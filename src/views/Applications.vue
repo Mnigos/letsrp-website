@@ -35,7 +35,7 @@
               </button>
             </div>
             <div>
-              <button to="/Applications/firm" class="content__element">
+              <button @click="go('firmApp')" class="content__element">
                 Formularz na Firmę
               </button>
             </div>
@@ -58,11 +58,13 @@
 import { h } from 'vue';
 import wlApp from '../components/wlApp.vue';
 import supApp from '../components/supApp.vue';
+import firmApp from '../components/firmApp.vue';
 import Footer from '../components/Footer';
 
 const pages = {
   wlApp,
   supApp,
+  firmApp,
 };
 
 export default {
