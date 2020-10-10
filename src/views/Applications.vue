@@ -62,6 +62,7 @@ import firmApp from '../components/firmApp';
 import orgApp from '../components/orgApp';
 import emsApp from '../components/emsApp';
 import lspdApp from '../components/lspdApp';
+import lscmApp from '../components/lscmApp';
 import Footer from '../components/Footer';
 
 const pages = {
@@ -71,6 +72,7 @@ const pages = {
   orgApp,
   emsApp,
   lspdApp,
+  lscmApp,
 };
 
 export default {
