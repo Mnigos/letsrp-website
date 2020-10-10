@@ -61,6 +61,7 @@ import supApp from '../components/supApp';
 import firmApp from '../components/firmApp';
 import orgApp from '../components/orgApp';
 import emsApp from '../components/emsApp';
+import lspdApp from '../components/lspdApp';
 import Footer from '../components/Footer';
 
 const pages = {
@@ -69,6 +70,7 @@ const pages = {
   firmApp,
   orgApp,
   emsApp,
+  lspdApp,
 };
 
 export default {
