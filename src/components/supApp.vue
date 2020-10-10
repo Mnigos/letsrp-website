@@ -50,7 +50,7 @@
                 type="text"
                 class="form__element-input"
                 v-model="experience"
-                placeholder="Historia twojej postaci."
+                placeholder="Twoje doświadczenie na stanowisku supporta."
               ></textarea>
             </form>
           </div>
