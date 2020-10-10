@@ -60,6 +60,7 @@ import wlApp from '../components/wlApp';
 import supApp from '../components/supApp';
 import firmApp from '../components/firmApp';
 import orgApp from '../components/orgApp';
+import emsApp from '../components/emsApp';
 import Footer from '../components/Footer';
 
 const pages = {
@@ -67,6 +68,7 @@ const pages = {
   supApp,
   firmApp,
   orgApp,
+  emsApp,
 };
 
 export default {
