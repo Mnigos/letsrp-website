@@ -1,7 +1,7 @@
 <template>
   <div class="wl-app">
     <header class="header">
-      <h2>Formularz na Firmę</h2>
+      <h2>Formularz na Organizację Przestępczą</h2>
     </header>
     <main>
       <article class="form" id="form">
@@ -13,18 +13,18 @@
                 type="text"
                 v-model="name"
                 class="form__element-input"
-                placeholder="Nazwa firmy"
+                placeholder="Nazwa Organizacji"
               />
             </form>
           </div>
           <div class="form__element--medium">
             <form>
-              <div class="form__element-label">Pomysł na firmę</div>
+              <div class="form__element-label">Pomysł na Organizację</div>
               <textarea
                 type="text"
                 class="form__element-input"
                 v-model="idea"
-                placeholder="Pomysł na twoją firmę."
+                placeholder="Pomysł na twoją organizację."
               ></textarea>
             </form>
           </div>
@@ -35,7 +35,7 @@
                 type="text"
                 class="form__element-input"
                 v-model="whyU"
-                placeholder="Imię IC właściciela firmy."
+                placeholder="Imię IC właściciela organizacji."
               />
             </form>
           </div>
@@ -61,7 +61,7 @@
                 type="text"
                 class="form__element-input"
                 v-model="members"
-                placeholder="Ilość członków twojej firmy.(Wpisz liczbę)"
+                placeholder="Ilość członków twojej organizacji.(Wpisz liczbę)"
               />
             </form>
           </div>
@@ -81,7 +81,7 @@
           <div class="form__element--medium">
             <form>
               <div class="form__element-label">
-                Typ firmy
+                Typ Organizacji
               </div>
               <textarea
                 type="text"
@@ -94,13 +94,13 @@
           <div class="form__element--medium">
             <form>
               <div class="form__element-label">
-                Kwatera twojej firmy
+                Kwatera twojej Organizacji
               </div>
               <textarea
                 type="text"
                 class="form__element-input"
                 v-model="headquarters"
-                placeholder="Opisz gdzie będzie znajdowała się kwatera twojej firmy."
+                placeholder="Opisz gdzie będzie znajdowała się kwatera twojej organizacji."
               ></textarea>
             </form>
           </div>
@@ -140,7 +140,7 @@
 import { validationRegexp, validationLength } from '../store/validation';
 
 export default {
-  name: 'firmApp',
+  name: 'orgApp',
   data() {
     return {
       message: '',
@@ -170,7 +170,7 @@ export default {
         ],
         [1, 20, 8, 20, 15],
         [
-          '<br /> Musisz podać nazwę firmy',
+          '<br /> Musisz podać swoje imię',
           '<br /> Musisz podać pomysł na firmę',
           '<br /> Musisz podać właściciela swojej firmy',
           '<br /> Musisz podać typ swojej firmy',

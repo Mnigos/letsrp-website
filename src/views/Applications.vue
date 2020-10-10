@@ -20,17 +20,17 @@
               </button>
             </div>
             <div>
-              <button to="/Applications/lspd" class="content__element">
+              <button @click="go('lspdApp')" class="content__element">
                 Formularz na frakcję LSPD
               </button>
             </div>
             <div>
-              <button to="/Applications/ems" class="content__element">
+              <button @click="go('emsApp')" class="content__element">
                 Formularz na frakcję EMS
               </button>
             </div>
             <div>
-              <button to="/Applications/lscm" class="content__element">
+              <button @click="go('lscmApp')" class="content__element">
                 formularz na frakcję LSCM
               </button>
             </div>
@@ -40,7 +40,7 @@
               </button>
             </div>
             <div>
-              <button to="/Applications/org" class="content__element">
+              <button @click="go('orgApp')" class="content__element">
                 Formularz na Organizację Przestępczą
               </button>
             </div>
@@ -56,15 +56,17 @@
 
 <script>
 import { h } from 'vue';
-import wlApp from '../components/wlApp.vue';
-import supApp from '../components/supApp.vue';
-import firmApp from '../components/firmApp.vue';
+import wlApp from '../components/wlApp';
+import supApp from '../components/supApp';
+import firmApp from '../components/firmApp';
+import orgApp from '../components/orgApp';
 import Footer from '../components/Footer';
 
 const pages = {
   wlApp,
   supApp,
   firmApp,
+  orgApp,
 };
 
 export default {
