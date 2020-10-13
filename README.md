@@ -1,9 +1,11 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ba441d83-659e-480e-94cd-9b84ca994f6a/deploy-status)](https://app.netlify.com/sites/letsrp/deploys)
+
 # Let's RP Website
 
 Polish GTA V FiveM RolePlay Server.
 
 ## Website preview
-[See page!](https://letsrp.netlify.app)
+https://letsrp.netlify.app
 
 ## Discord
 [Join us!](https://discord.gg/Ffrh3KY)

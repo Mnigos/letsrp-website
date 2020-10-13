@@ -1,69 +1,67 @@
 <template>
   <div class="wl-app">
     <header class="header">
-      <h2>Formularz na Support</h2>
+      <h2>Formularz na Firmę</h2>
     </header>
     <main>
       <article class="form" id="form">
         <section class="form-half">
           <div class="form__element">
             <form>
-              <div class="form__element-label">Imię</div>
+              <div class="form__element-label">Nazwa</div>
               <input
                 type="text"
                 v-model="name"
                 class="form__element-input"
-                placeholder="Twoje imię."
+                placeholder="Nazwa firmy"
               />
             </form>
           </div>
           <div class="form__element--medium">
             <form>
-              <div class="form__element-label">O sobie</div>
+              <div class="form__element-label">Pomysł na firmę</div>
               <textarea
                 type="text"
                 class="form__element-input"
-                v-model="about"
-                placeholder="Kilka zdań o sobie."
+                v-model="idea"
+                placeholder="Pomysł na twoją firmę."
               ></textarea>
             </form>
           </div>
-          <div class="form__element--medium">
+          <div class="form__element">
             <form>
-              <div class="form__element-label">
-                Dlaczego ty
-              </div>
-              <textarea
+              <div class="form__element-label">Właściciel</div>
+              <input
                 type="text"
                 class="form__element-input"
                 v-model="whyU"
-                placeholder="Dlaczego właśnie ty powinieneś zostać supportem?"
-              ></textarea>
+                placeholder="Imię IC właściciela firmy."
+              />
             </form>
           </div>
           <div class="form__element--medium">
             <form>
               <div class="form__element-label">
-                Twoje doświadczenie na tym stanowisku
+                Czego oczekujecie od serwera?
               </div>
               <textarea
                 type="text"
                 class="form__element-input"
-                v-model="experience"
-                placeholder="Twoje doświadczenie na stanowisku supporta."
+                v-model="expects"
+                placeholder="Twoje oczekiwania względem serwera."
               ></textarea>
             </form>
           </div>
           <div class="form__element">
             <form>
               <div class="form__element-label">
-                Ile czasu dziennie jesteś w stanie poświęcić na serwer
+                Ilość członków
               </div>
               <input
                 type="text"
                 class="form__element-input"
-                v-model="hoursPerDay"
-                placeholder="Ile godzin dziennie możesz poświęcić na serwer(Wpisz liczbę)."
+                v-model="members"
+                placeholder="Ilość członków twojej firmy.(Wpisz liczbę)"
               />
             </form>
           </div>
@@ -78,6 +76,32 @@
                 v-model="old"
                 placeholder="Twój wiek"
               />
+            </form>
+          </div>
+          <div class="form__element--medium">
+            <form>
+              <div class="form__element-label">
+                Typ firmy
+              </div>
+              <textarea
+                type="text"
+                class="form__element-input"
+                v-model="type"
+                placeholder="Czy będzie się zajmowała twoja firma."
+              ></textarea>
+            </form>
+          </div>
+          <div class="form__element--medium">
+            <form>
+              <div class="form__element-label">
+                Kwatera twojej firmy
+              </div>
+              <textarea
+                type="text"
+                class="form__element-input"
+                v-model="headquarters"
+                placeholder="Opisz gdzie będzie znajdowała się kwatera twojej firmy."
+              ></textarea>
             </form>
           </div>
           <div class="form__element">
@@ -116,7 +140,7 @@
 import { validationRegexp, validationLength } from '../store/validation';
 
 export default {
-  name: 'supApp',
+  name: 'firmApp',
   data() {
     return {
       message: '',
@@ -135,23 +159,30 @@ export default {
       );
 
       validationLength(
-        [this.name, this.about, this.whyU, this.experience, this.hex],
-        [8, 20, 20, 20, 15],
         [
-          '<br />Imię i nazwisko twojej postaci musi zawierać co najmniej 8 znaków',
-          '<br /> Musisz podać informację o sobie',
-          '<br /> Musisz podać informację dlaczego ty',
-          '<br /> Musisz podać swoje doświadczenie na tym stanowisku',
+          this.name,
+          this.idea,
+          this.owner,
+          this.expects,
+          this.type,
+          this.headquarters,
+          this.hex,
+        ],
+        [1, 20, 8, 20, 15],
+        [
+          '<br /> Musisz podać nazwę firmy',
+          '<br /> Musisz podać pomysł na firmę',
+          '<br /> Musisz podać właściciela swojej firmy',
+          '<br /> Musisz podać typ swojej firmy',
+          '<br /> Musisz podać kwaterę firmy',
           '<br /> Niepoprawny steam HEX ID',
         ],
         messagesArray
       );
       if (!this.old) messagesArray.push('<br /> Musisz podać swój wiek');
       if (this.old) messagesArray[6] = '';
-      if (!this.hoursPerDay)
-        messagesArray.push(
-          '<br /> Musisz podać ile godzin dziennie jesteś w stanie spędzić'
-        );
+      if (!this.members)
+        messagesArray.push('<br /> Musisz podać członków swojej firmy');
       if (this.hoursPerDay) messagesArray[7] = '';
 
       this.message = messagesArray.slice(0).join('');
