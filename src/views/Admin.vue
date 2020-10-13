@@ -16,7 +16,7 @@
         <input
           type="checkbox"
           @change="showPasswordAsText"
-          v-model="shouldShow"
+          v-model="switchVisibility"
         />
       </div>
     </div>
@@ -28,12 +28,12 @@ export default {
   data() {
     return {
       formPasswordType: 'password',
-      shouldShow: false,
+      switchVisibility: false,
     };
   },
   methods: {
     showPasswordAsText() {
-      this.formPasswordType = this.shouldShow ? 'password' : 'text';
+      this.formPasswordType = this.switchVisibility ? 'password' : 'text';
     },
   },
 };
