@@ -1,15 +1,14 @@
 <template>
   <div class="wrapper">
-    <div class="form">
+    <form class="form">
+      <header class="form__header">
+        <h1>Logowanie</h1>
+      </header>
       <div class="form__element">
-        <form>
-          <input type="text" />
-        </form>
+        <input type="text" v-model="name" />
       </div>
       <div class="form__element">
-        <form>
-          <input :type="formPasswordType" />
-        </form>
+        <input :type="formPasswordType" v-model="pass" />
       </div>
       <div class="form__element--checkbox">
         <label>Pokaż hasło</label>
@@ -19,7 +18,10 @@
           v-model="switchVisibility"
         />
       </div>
-    </div>
+      <div class="form__button">
+        <button @click="login">Zaloguj</button>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -29,11 +31,22 @@ export default {
     return {
       formPasswordType: 'password',
       switchVisibility: false,
+      name: '',
+      pass: '',
     };
   },
   methods: {
     showPasswordAsText() {
       this.formPasswordType = this.switchVisibility ? 'password' : 'text';
+    },
+    login() {
+      const name = 'John';
+      const pass = 'zaq1@WSX';
+      if (this.name === name && this.pass === pass) {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
 };
@@ -80,5 +93,19 @@ export default {
       }
     }
   }
+}
+
+input {
+  font-size: 24px;
+  font-family: sans-serif;
+}
+
+button {
+  background-color: #fff;
+  color: vars.$dark-color;
+  text-decoration: none;
+  outline: none;
+  font-size: 24px;
+  font-family: sans-serif;
 }
 </style>
