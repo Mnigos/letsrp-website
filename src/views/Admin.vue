@@ -8,6 +8,7 @@
 import Login from '../components/Login';
 
 export default {
+  name: 'Admin',
   components: {
     Login,
   },

@@ -19,34 +19,39 @@
         />
       </div>
       <div class="form__button">
-        <button @click="login">Zaloguj</button>
+        <button @click="auth">Zaloguj</button>
       </div>
+      <div class="form__error">{{ messageError }}</div>
     </form>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'Login',
   data() {
     return {
       formPasswordType: 'password',
       switchVisibility: false,
       name: '',
       pass: '',
+      messageError: '',
     };
   },
   methods: {
     showPasswordAsText() {
       this.formPasswordType = this.switchVisibility ? 'password' : 'text';
     },
-    login() {
+    auth() {
       const name = 'John';
       const pass = 'zaq1@WSX';
-      if (this.name === name && this.pass === pass) {
-        return true;
-      } else {
-        return false;
-      }
+
+      if (this.name === name && this.pass === pass) this.login();
+      else this.messageError = 'Niepoprawne hasło lub nazwa użytkownika';
+    },
+    login() {
+      this.$emit('authenticated', true);
+      this.$router.replace({ name: 'Admin' });
     },
   },
 };
