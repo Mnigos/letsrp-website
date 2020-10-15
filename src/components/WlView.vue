@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  name: 'AdminView',
+  name: 'WlView',
 };
 </script>
