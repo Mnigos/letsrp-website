@@ -6,7 +6,7 @@
           <router-link to="/">Strona Główna</router-link>
         </div>
         <div class="navbar__element">
-          <router-link to="/Applications">Aplikacje</router-link>
+          <router-link to="/applications">Aplikacje</router-link>
         </div>
       </nav>
     </div>
