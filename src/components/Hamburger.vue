@@ -6,12 +6,11 @@ l<template>
       </span>
     </button>
     <nav class="navbar" ref="nav">
-      <div
-        class="navbar__list"
-        :key="page"
-        v-for="page in pages"
-        v-html="page"
-      ></div>
+      <div class="navbar__list" :key="page" v-for="page in pages">
+        <button class="navbar__item" @click="go(page.link)">
+          {{ page.name }}
+        </button>
+      </div>
     </nav>
   </div>
 </template>
@@ -27,8 +26,12 @@ export default {
   data() {
     return {
       pages: [
-        `<button class="navbar__item" @click="go('WlView')">Whitelist</button>`,
+        {
+          link: WlView,
+          name: 'Whitelist',
+        },
       ],
+      pagesNames: ['Whitelist'],
       componentToShow: {
         render: () => h('div', ''),
       },
@@ -42,12 +45,13 @@ export default {
     async go(where) {
       this.componentToShow = pages[where];
       await this.$nextTick();
+      console.log('e');
     },
   },
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use '../styles/vars';
 
 html {
@@ -67,6 +71,7 @@ body {
 
 .wrapper {
   position: relative;
+  z-index: 1;
 }
 
 .hamburger {
@@ -166,7 +171,19 @@ body {
   button {
     font-family: sans-serif;
     font-size: 24px;
-    background: #202020;
+    width: 100px;
+    background: #00000000;
+    outline: none;
+    border: none;
+    color: vars.$light-color;
+
+    &:hover {
+      border-bottom: vars.$light-color 2px solid;
+    }
+    &:active {
+      border-bottom: vars.$green-color 2px solid;
+      transition: 0.1s ease-in-out;
+    }
   }
 }
 
