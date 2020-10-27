@@ -1,37 +1,14 @@
 <template>
   <div class="wrapper">
-    <div class="navbar__wrapper" ref="nav">
-      <nav class="navbar">
-        <div class="navbar__element">
-          <button @click="go('WlView')">Whitelist</button>
-        </div>
-        <div class="navbar__element">
-          <button @click="go('SupView')">Support</button>
-        </div>
-        <div class="navbar__element">
-          <button @click="go('LspdView')">LSPD</button>
-        </div>
-        <div class="navbar__element">
-          <button @click="go('EmsView')">EMS</button>
-        </div>
-        <div class="navbar__element">
-          <button @click="go('LscmView')">LSCM</button>
-        </div>
-        <div class="navbar__element">
-          <button @click="go('FirmView')">Firma</button>
-        </div>
-        <div class="navbar__element">
-          <button @click="go('OrgView')">Organizacja Przestępcza</button>
-        </div>
-      </nav>
-    </div>
     <!-- <Login /> -->
+    <Hamburger />
     <WlView />
   </div>
 </template>
 
 <script>
 import Login from '../components/Login';
+import Hamburger from '../components/Hamburger';
 import WlView from '../components/WlView';
 
 const pages = {
@@ -43,6 +20,7 @@ export default {
   components: {
     Login,
     WlView,
+    Hamburger,
   },
   methods: {
     async go(where) {

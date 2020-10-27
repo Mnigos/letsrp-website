@@ -44,7 +44,6 @@
                 Formularz na Organizację Przestępczą
               </button>
             </div>
-
             <component :is="componentToShow" ref="component"></component>
           </article>
         </main>
