@@ -44,14 +44,6 @@ export default {
       await this.$nextTick();
     },
   },
-  mounted() {
-    window.addEventListener('scroll', () => {
-      this.$refs.nav.classList.toggle('sticky', window.scrollY > 0);
-    });
-  },
-  beforeUnmount() {
-    window.removeEventListener('scroll');
-  },
 };
 </script>
 
@@ -88,7 +80,6 @@ body {
   margin-top: 10px;
   position: sticky;
   z-index: 1;
-  transition: 0.5s ease-in-out;
 }
 
 .hamburger,
