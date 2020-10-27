@@ -43,21 +43,6 @@ export default {
   height: 100vh;
   width: 100vw;
   text-align: center;
-}
-
-button {
-  color: #fff;
-  text-decoration: none;
-  outline: none;
-  border: none;
-  font-size: 24px;
-  font-family: sans-serif;
-  background-color: vars.$dark-color;
-}
-
-.navbar {
   display: flex;
-  justify-content: center;
-  margin-right: 3vw;
 }
 </style>
