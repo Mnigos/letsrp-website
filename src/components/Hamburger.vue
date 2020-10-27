@@ -1,4 +1,4 @@
-l<template>
+<template>
   <div class="wrapper">
     <button class="hamburger" ref="hamburger" @click="handleClick()">
       <span class="hamburger__box">
