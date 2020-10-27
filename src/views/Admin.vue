@@ -40,7 +40,7 @@ export default {
 
 .wrapper {
   background-color: vars.$dark-color;
-  height: 100vh;
+  height: 200vh;
   width: 100vw;
   text-align: center;
   display: flex;
