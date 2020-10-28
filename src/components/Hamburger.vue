@@ -70,12 +70,13 @@ body {
 }
 
 .wrapper {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1;
+  max-width: 100px;
 }
 
 .hamburger {
-  float: left;
   height: 20px;
   padding: 10px;
   display: inline-block;
