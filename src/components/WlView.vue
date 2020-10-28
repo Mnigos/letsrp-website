@@ -3,9 +3,10 @@
     <article class="forms">
       <section class="forms__item" v-for="form in forms" :key="form">
         <p>Imię i Nazwisko: {{ form.name }}</p>
-        <button ref="dotBtn" @click="expand">...</button>
+        <button ref="expandBtn" @click="display">...</button>
         <div class="forms__item-content" ref="content">
           <p>Content: {{ form.content }}</p>
+          <p><button @click="display">Zwiń</button></p>
         </div>
       </section>
     </article>
@@ -42,9 +43,9 @@ export default {
     };
   },
   methods: {
-    expand() {
+    display() {
       this.$refs.content.classList.toggle('display');
-      this.$refs.dotBtn.classList.toggle('display-none');
+      this.$refs.expandBtn.classList.toggle('display-none');
       console.log('e');
     },
   },
@@ -83,15 +84,24 @@ export default {
   min-height: 130px;
   margin-left: 15vw;
   border-radius: 20px;
+  flex-wrap: wrap;
 
   button {
     font-family: sans-serif;
     font-size: 24px;
-    width: 100px;
     background: #00000000;
     outline: none;
     border: none;
     color: vars.$light-color;
+
+    &:hover {
+      border-bottom: vars.$light-color 2px solid;
+      cursor: pointer;
+    }
+    &:active {
+      border-bottom: vars.$green-color 2px solid;
+      transition: 0.1s ease-in-out;
+    }
   }
 }
 </style>
