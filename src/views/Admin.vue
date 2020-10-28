@@ -11,26 +11,12 @@ import Login from '../components/Login';
 import Hamburger from '../components/Hamburger';
 import WlView from '../components/WlView';
 
-const pages = {
-  WlView,
-};
-
 export default {
   name: 'Admin',
   components: {
     Login,
     WlView,
     Hamburger,
-  },
-  methods: {
-    async go(where) {
-      this.componentToShow = pages[where];
-      await this.$nextTick();
-      window.scrollTo({
-        top: this.$refs.component.$el.getBoundingClientRect().top,
-        behavior: 'smooth',
-      });
-    },
   },
 };
 </script>
