@@ -2,11 +2,19 @@
   <div class="wrapper">
     <article class="forms">
       <section class="forms__item" v-for="form in forms" :key="form">
-        <p>Imię i Nazwisko: {{ form.name }}</p>
-        <button ref="expandBtn" @click="display">...</button>
-        <div class="forms__item-content" ref="content">
-          <p>Content: {{ form.content }}</p>
-          <p><button @click="display">Zwiń</button></p>
+        <p><b>Imię i Nazwisko: </b>{{ form.name }}</p>
+        <button
+          @click="form.isActive = true"
+          :class="{ display: !form.isActive, 'display-none': form.isActive }"
+        >
+          ...
+        </button>
+        <div
+          class="forms__item-content center-col"
+          :class="{ display: form.isActive, 'display-none': !form.isActive }"
+        >
+          <p><b>Content: </b>{{ form.content }}</p>
+          <button @click="form.isActive = false">Zwiń</button>
         </div>
       </section>
     </article>
@@ -23,31 +31,28 @@ export default {
           name: 'Form1',
           content:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet risus feugiat in ante metus dictum at. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Nulla malesuada pellentesque elit eget. Vestibulum sed arcu non odio euismod lacinia. Morbi tempus iaculis urna id volutpat lacus. Viverra justo nec ultrices dui sapien eget mi proin. Quis vel eros donec ac odio tempor orci dapibus. Proin sed libero enim sed',
+          isActive: false,
         },
         {
           name: 'Form2',
           content:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet risus feugiat in ante metus dictum at. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Nulla malesuada pellentesque elit eget. Vestibulum sed arcu non odio euismod lacinia. Morbi tempus iaculis urna id volutpat lacus. Viverra justo nec ultrices dui sapien eget mi proin. Quis vel eros donec ac odio tempor orci dapibus. Proin sed libero enim sed',
+          isActive: false,
         },
         {
           name: 'Form3',
           content:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet risus feugiat in ante metus dictum at. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Nulla malesuada pellentesque elit eget. Vestibulum sed arcu non odio euismod lacinia. Morbi tempus iaculis urna id volutpat lacus. Viverra justo nec ultrices dui sapien eget mi proin. Quis vel eros donec ac odio tempor orci dapibus. Proin sed libero enim sed',
+          isActive: false,
         },
         {
           name: 'Form4',
           content:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet risus feugiat in ante metus dictum at. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Nulla malesuada pellentesque elit eget. Vestibulum sed arcu non odio euismod lacinia. Morbi tempus iaculis urna id volutpat lacus. Viverra justo nec ultrices dui sapien eget mi proin. Quis vel eros donec ac odio tempor orci dapibus. Proin sed libero enim sed',
+          isActive: false,
         },
       ],
     };
-  },
-  methods: {
-    display() {
-      this.$refs.content.classList.toggle('display');
-      this.$refs.expandBtn.classList.toggle('display-none');
-      console.log('e');
-    },
   },
 };
 </script>
@@ -56,7 +61,6 @@ export default {
 @use '../styles/vars';
 
 .wrapper {
-  height: 200vh;
   display: flex;
 }
 
@@ -84,7 +88,11 @@ export default {
   min-height: 130px;
   margin-left: 15vw;
   border-radius: 20px;
-  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  padding-bottom: 30px;
 
   button {
     font-family: sans-serif;
@@ -93,6 +101,7 @@ export default {
     outline: none;
     border: none;
     color: vars.$light-color;
+    border-bottom: #00000000 2px solid;
 
     &:hover {
       border-bottom: vars.$light-color 2px solid;
@@ -103,5 +112,11 @@ export default {
       transition: 0.1s ease-in-out;
     }
   }
+}
+
+.center-col {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
