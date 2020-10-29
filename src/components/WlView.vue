@@ -5,6 +5,7 @@
         <h2><b>IC | </b>Imię i Nazwisko:</h2>
         {{ form.name }}
         <button
+          class="collapse-button"
           @click="form.isActive = true"
           :class="{ display: !form.isActive, 'display-none': form.isActive }"
         >
@@ -32,7 +33,13 @@
           {{ form.dc }}
           <h2><b>OOC | </b>Steam HEX:</h2>
           {{ form.hex }}
-          <button @click="form.isActive = false">Zwiń</button>
+          <div class="forms__item-check">
+            <button class="forms__item-content--accept">Zaakceptuj</button>
+            <button class="forms__item-content--discard">Odrzuć</button>
+          </div>
+          <button class="collapse-button" @click="form.isActive = false">
+            Zwiń
+          </button>
         </div>
       </section>
     </article>
@@ -163,29 +170,59 @@ h2 {
   align-items: center;
   margin-top: 30px;
   padding-bottom: 30px;
-
-  button {
-    font-family: sans-serif;
-    font-size: 24px;
-    background: #00000000;
-    outline: none;
-    border: none;
-    color: vars.$light-color;
-    border-bottom: #00000000 2px solid;
-
-    &:hover {
-      border-bottom: vars.$light-color 2px solid;
-      cursor: pointer;
-    }
-    &:active {
-      border-bottom: vars.$green-color 2px solid;
-      transition: 0.1s ease-in-out;
-    }
-  }
 }
 
 .forms__item-content {
   width: 70%;
+
+  &--accept {
+    font-family: sans-serif;
+    font-size: 24px;
+    background: vars.$green-color;
+    outline: none;
+    width: 150px;
+    border: 2px vars.$green-color solid;
+    padding: 10px;
+    border-radius: 10px;
+    color: vars.$light-color;
+    margin-right: 30px;
+    transition: 0.35s ease-in;
+
+    &:hover {
+      transform: translatex(15px);
+
+      &::after {
+        transform: translatex(15px);
+      }
+    }
+    &:active {
+      border: 2px #000000 solid;
+    }
+  }
+
+  &--discard {
+    font-family: sans-serif;
+    font-size: 24px;
+    background: #ff0000;
+    outline: none;
+    width: 150px;
+    border: 2px #ff0000 solid;
+    padding: 10px;
+    border-radius: 10px;
+    color: vars.$light-color;
+    transition: 0.35s ease-in;
+
+    &:hover {
+      transform: translatex(-15px);
+
+      &::after {
+        transform: translatex(-15px);
+      }
+    }
+    &:active {
+      border: 2px #000000 solid;
+    }
+  }
 
   button {
     margin-top: 30px;
@@ -196,5 +233,24 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.collapse-button {
+  font-family: sans-serif;
+  font-size: 24px;
+  background: #00000000;
+  outline: none;
+  border: none;
+  color: vars.$light-color;
+  border-bottom: #00000000 2px solid;
+
+  &:hover {
+    border-bottom: vars.$light-color 2px solid;
+    cursor: pointer;
+  }
+  &:active {
+    border-bottom: vars.$green-color 2px solid;
+    transition: 0.1s ease-in-out;
+  }
 }
 </style>
