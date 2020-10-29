@@ -2,7 +2,8 @@
   <div class="wrapper">
     <article class="forms">
       <section class="forms__item" v-for="form in forms" :key="form">
-        <p><b>Imię i Nazwisko: </b>{{ form.name }}</p>
+        <h2><b>IC | </b>Imię i Nazwisko:</h2>
+        {{ form.name }}
         <button
           @click="form.isActive = true"
           :class="{ display: !form.isActive, 'display-none': form.isActive }"
@@ -13,7 +14,24 @@
           class="forms__item-content center-col"
           :class="{ display: form.isActive, 'display-none': !form.isActive }"
         >
-          <p><b>Content: </b>{{ form.content }}</p>
+          <h2><b>IC | </b>Data Urodzenia:</h2>
+          {{ form.date }}
+          <h2><b>IC | </b>Pomysł na postać:</h2>
+          {{ form.idea }}
+          <h2><b>IC | </b>Historia Postaci:</h2>
+          {{ form.story }}
+          <h2><b>IC | </b>Kreatywna Akcja:</h2>
+          {{ form.action }}
+          <h2><b>IC | </b>Wiek:</h2>
+          {{ form.old }}
+          <h2><b>OOC | </b>Wiedza RP:</h2>
+          {{ form.know }}
+          <h2><b>OOC | </b>Doświadczenie w RP:</h2>
+          {{ form.experience }}
+          <h2><b>OOC | </b>Discord:</h2>
+          {{ form.dc }}
+          <h2><b>OOC | </b>Steam HEX:</h2>
+          {{ form.hex }}
           <button @click="form.isActive = false">Zwiń</button>
         </div>
       </section>
@@ -28,27 +46,75 @@ export default {
     return {
       forms: [
         {
-          name: 'Form1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet risus feugiat in ante metus dictum at. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Nulla malesuada pellentesque elit eget. Vestibulum sed arcu non odio euismod lacinia. Morbi tempus iaculis urna id volutpat lacus. Viverra justo nec ultrices dui sapien eget mi proin. Quis vel eros donec ac odio tempor orci dapibus. Proin sed libero enim sed',
+          name: 'e',
+          date: '01-01-2020',
+          idea:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          story:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          action:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          old: 1,
+          know:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          experience:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          dc: 'MoneyIgos#2000',
+          hex: '110000100000638',
           isActive: false,
         },
         {
           name: 'Form2',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet risus feugiat in ante metus dictum at. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Nulla malesuada pellentesque elit eget. Vestibulum sed arcu non odio euismod lacinia. Morbi tempus iaculis urna id volutpat lacus. Viverra justo nec ultrices dui sapien eget mi proin. Quis vel eros donec ac odio tempor orci dapibus. Proin sed libero enim sed',
+          date: '01-01-2020',
+          idea:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          story:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          action:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          old: 1,
+          know:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          experience:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          dc: 'MoneyIgos#2000',
+          hex: '110000100000638',
           isActive: false,
         },
         {
           name: 'Form3',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet risus feugiat in ante metus dictum at. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Nulla malesuada pellentesque elit eget. Vestibulum sed arcu non odio euismod lacinia. Morbi tempus iaculis urna id volutpat lacus. Viverra justo nec ultrices dui sapien eget mi proin. Quis vel eros donec ac odio tempor orci dapibus. Proin sed libero enim sed',
+          date: '01-01-2020',
+          idea:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          story:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          action:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          old: 1,
+          know:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          experience:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          dc: 'MoneyIgos#2000',
+          hex: '110000100000638',
           isActive: false,
         },
         {
           name: 'Form4',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet risus feugiat in ante metus dictum at. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Nulla malesuada pellentesque elit eget. Vestibulum sed arcu non odio euismod lacinia. Morbi tempus iaculis urna id volutpat lacus. Viverra justo nec ultrices dui sapien eget mi proin. Quis vel eros donec ac odio tempor orci dapibus. Proin sed libero enim sed',
+          date: '01-01-2020',
+          idea:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          story:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          action:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          old: 1,
+          know:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          experience:
+            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
+          dc: 'MoneyIgos#2000',
+          hex: '110000100000638',
           isActive: false,
         },
       ],
@@ -62,6 +128,10 @@ export default {
 
 .wrapper {
   display: flex;
+}
+
+h2 {
+  font-weight: 400;
 }
 
 .forms {
@@ -111,6 +181,14 @@ export default {
       border-bottom: vars.$green-color 2px solid;
       transition: 0.1s ease-in-out;
     }
+  }
+}
+
+.forms__item-content {
+  width: 70%;
+
+  button {
+    margin-top: 30px;
   }
 }
 
