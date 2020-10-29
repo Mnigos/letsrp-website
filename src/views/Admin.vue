@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
-    <!-- <Login /> -->
-    <Hamburger />
-    <WlView />
+    <Login />
+    <!-- <Hamburger />
+    <WlView /> -->
   </div>
 </template>
 

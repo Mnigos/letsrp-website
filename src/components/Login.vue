@@ -52,6 +52,7 @@ export default {
     login() {
       this.$emit('authenticated', true);
       this.$router.replace({ name: 'Admin' });
+      console.log('e');
     },
   },
 };
@@ -65,6 +66,8 @@ export default {
   height: 100vh;
   width: 100vw;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .form {
