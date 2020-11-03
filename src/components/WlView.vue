@@ -34,8 +34,12 @@
           <h2><b>OOC | </b>Steam HEX:</h2>
           {{ form.hex }}
           <div class="forms__item-check">
-            <button class="forms__item-content--accept">Zaakceptuj</button>
-            <button class="forms__item-content--discard">Odrzuć</button>
+            <button class="forms__item-content--accept" @click="accept">
+              Zaakceptuj
+            </button>
+            <button class="forms__item-content--discard" @click="discard">
+              Odrzuć
+            </button>
           </div>
           <button class="collapse-button" @click="form.isActive = false">
             Zwiń
@@ -125,7 +129,22 @@ export default {
           isActive: false,
         },
       ],
+      checking: false,
     };
+  },
+  methods: {
+    discard() {
+      confirm('Czy na pewno chcesz odrzucić to podanie?').then(
+        prompt('Podaj powód odrzucenia podania(opcjonalne)').then(
+          alert('Podanie zostało odrzucone!')
+        )
+      );
+    },
+    accept() {
+      confirm('Czy na pewno chcesz zatwierdzić to podanie?').then(
+        alert('Podanie zostało zatwierdzone!')
+      );
+    },
   },
 };
 </script>
