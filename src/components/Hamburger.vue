@@ -17,9 +17,10 @@
 
 <script>
 import { h } from 'vue';
-import WlView from '../components/WlView';
+import WlView from './WlView';
+import SupView from './SupView';
 
-const pages = [WlView];
+const pages = [WlView, SupView];
 
 export default {
   name: 'Hamburger',
@@ -30,8 +31,11 @@ export default {
           link: WlView,
           name: 'Whitelist',
         },
+        {
+          link: SupView,
+          name: 'Support',
+        },
       ],
-      pagesNames: ['Whitelist'],
       componentToShow: {
         render: () => h('div', ''),
       },
