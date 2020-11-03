@@ -49,7 +49,6 @@ export default {
     async go(where) {
       this.componentToShow = pages[where];
       await this.$nextTick();
-      console.log('e');
     },
   },
 };
@@ -159,7 +158,9 @@ body {
   background-color: vars.$darker-color;
   position: absolute;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   top: 0;
   left: 0;
   transform: translateX(-250px);
@@ -170,7 +171,7 @@ body {
 }
 
 .navbar__list {
-  margin-top: 50px;
+  margin-top: 10px;
   list-style: none;
 
   button {
