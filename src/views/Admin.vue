@@ -15,12 +15,7 @@
         </div>
       </nav>
     </div>
-    <!-- <div v-if="componentToShow"> -->
     <component :is="componentToShow" ref="component"></component>
-    <!-- </div> -->
-    <!-- <div v-else>
-      <WlView />
-    </div> -->
   </div>
 </template>
 
@@ -59,6 +54,9 @@ export default {
       },
     };
   },
+  created() {
+    this.go('WlView');
+  },
   methods: {
     handleClick() {
       this.$refs.hamburger.classList.toggle('hamburger--active');
@@ -68,9 +66,6 @@ export default {
       this.componentToShow = pages[where];
       await this.$nextTick();
     },
-  },
-  created() {
-    this.go('WlView');
   },
 };
 </script>
