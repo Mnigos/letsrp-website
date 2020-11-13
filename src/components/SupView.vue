@@ -53,7 +53,7 @@
 
 <script>
 export default {
-  name: 'WlView',
+  name: 'SupView',
   data() {
     return {
       forms: [
