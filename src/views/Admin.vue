@@ -24,10 +24,12 @@ import Login from '../components/Login';
 import { h } from 'vue';
 import WlView from '../components/WlView';
 import SupView from '../components/SupView';
+import OrgView from '../components/OrgView';
 
 const pages = {
   WlView,
   SupView,
+  OrgView,
 };
 
 export default {
@@ -47,9 +49,12 @@ export default {
           link: 'SupView',
           name: 'Support',
         },
+        {
+          link: 'OrgView',
+          name: 'Organizacja Przestępcza',
+        },
       ],
       componentToShow: {
-        default: WlView,
         render: () => h('div', ''),
       },
     };
@@ -72,6 +77,19 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/vars';
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  background-color: vars.$dark-color;
+  padding: 20px;
+}
 
 .wrapper {
   background-color: vars.$dark-color;
