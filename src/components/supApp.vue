@@ -113,7 +113,7 @@
 </template>
 
 <script>
-import { validationRegexp, validationLength } from '../store/validation';
+import { validationRegexp, validationLength } from '../validation';
 
 export default {
   name: 'supApp',

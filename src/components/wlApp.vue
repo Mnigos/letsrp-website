@@ -141,7 +141,7 @@
 </template>
 
 <script>
-import { validationLength, validationRegexp } from '../store/validation';
+import { validationLength, validationRegexp } from '../validation';
 
 export default {
   name: 'wlApp',
