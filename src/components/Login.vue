@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <form class="form">
+    <form class="form" action="#" @submit.prevent="login">
       <header class="form__header">
         <h1>Logowanie</h1>
       </header>
@@ -19,7 +19,7 @@
         />
       </div>
       <div class="form__button">
-        <button @click="auth">Zaloguj</button>
+        <button type="submit">Zaloguj</button>
       </div>
       <div class="form__error">{{ messageError }}</div>
     </form>
@@ -50,8 +50,10 @@ export default {
       else this.messageError = 'Niepoprawne hasło lub nazwa użytkownika';
     },
     login() {
-      this.$emit('authenticated', true);
-      this.$router.replace({ name: 'Admin' });
+      this.$store.dispatch('retrieveToken', {
+        name: this.name,
+        pass: this.pass,
+      });
       console.log('e');
     },
   },

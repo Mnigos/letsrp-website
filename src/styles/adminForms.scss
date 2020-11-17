@@ -1,5 +1,54 @@
 @use '../styles/vars';
 
+.discard-button {
+  font-family: sans-serif;
+  font-size: 24px;
+  background: #ff0000;
+  outline: none;
+  width: 150px;
+  border: 2px #ff0000 solid;
+  padding: 10px;
+  border-radius: 10px;
+  color: vars.$light-color;
+  transition: 0.35s ease-in;
+
+  &:hover {
+    transform: translatex(-15px);
+
+    &::after {
+      transform: translatex(-15px);
+    }
+  }
+  &:active {
+    border: 2px #000000 solid;
+  }
+}
+
+.accept-button {
+  font-family: sans-serif;
+  font-size: 24px;
+  background: vars.$green-color;
+  outline: none;
+  width: 150px;
+  border: 2px vars.$green-color solid;
+  padding: 10px;
+  border-radius: 10px;
+  color: vars.$light-color;
+  margin-right: 30px;
+  transition: 0.35s ease-in;
+
+  &:hover {
+    transform: translatex(15px);
+
+    &::after {
+      transform: translatex(15px);
+    }
+  }
+  &:active {
+    border: 2px #000000 solid;
+  }
+}
+
 .wrapper {
   display: flex;
 }
@@ -42,55 +91,6 @@ h2 {
 .forms__item-content {
   width: 70%;
 
-  &--accept {
-    font-family: sans-serif;
-    font-size: 24px;
-    background: vars.$green-color;
-    outline: none;
-    width: 150px;
-    border: 2px vars.$green-color solid;
-    padding: 10px;
-    border-radius: 10px;
-    color: vars.$light-color;
-    margin-right: 30px;
-    transition: 0.35s ease-in;
-
-    &:hover {
-      transform: translatex(15px);
-
-      &::after {
-        transform: translatex(15px);
-      }
-    }
-    &:active {
-      border: 2px #000000 solid;
-    }
-  }
-
-  &--discard {
-    font-family: sans-serif;
-    font-size: 24px;
-    background: #ff0000;
-    outline: none;
-    width: 150px;
-    border: 2px #ff0000 solid;
-    padding: 10px;
-    border-radius: 10px;
-    color: vars.$light-color;
-    transition: 0.35s ease-in;
-
-    &:hover {
-      transform: translatex(-15px);
-
-      &::after {
-        transform: translatex(-15px);
-      }
-    }
-    &:active {
-      border: 2px #000000 solid;
-    }
-  }
-
   button {
     margin-top: 30px;
   }
@@ -119,4 +119,10 @@ h2 {
     border-bottom: vars.$green-color 2px solid;
     transition: 0.1s ease-in-out;
   }
+}
+
+.forms__item-content-window {
+  background-color: #20202054;
+  height: 100%;
+  width: 100%;
 }
