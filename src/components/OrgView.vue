@@ -1,8 +1,82 @@
 <template>
   <div class="wrapper">
+    <div
+      class="window"
+      :class="{
+        display: window.container,
+        'display-none': !window.container,
+      }"
+    >
+      <div
+        class="window__verification--discard"
+        :class="{
+          display: window.verificationDiscard,
+          'display-none': !window.verificationDiscard,
+        }"
+      >
+        <h4>Czy napewno chcesz odrzucić to podanie?</h4>
+        <button class="accept-button" @click="prompt">Odrzuć</button>
+        <button class="discard-button" @click="cancel">Anuluj</button>
+      </div>
+
+      <div
+        class="window__prompt--discard"
+        :class="{
+          display: window.promptDiscard,
+          'display-none': !window.promptDiscard,
+        }"
+      >
+        <h4>Podaj powód odrzucenia podania</h4>
+        <textarea
+          type="text"
+          class="window__prompt--discard__input"
+          v-model="reason"
+          placeholder="Powód odrzucenia podania."
+        ></textarea>
+        <button class="accept-button" @click="alert('discard')">
+          Zapisz
+        </button>
+      </div>
+
+      <div
+        class="window__alert--discard"
+        :class="{
+          display: window.alertDiscard,
+          'display-none': !window.alertDiscard,
+        }"
+      >
+        <h4>Odrzucono podanie</h4>
+        <button class="accept-button" @click="cancel">OK</button>
+      </div>
+
+      <div
+        class="window__verification--accept"
+        :class="{
+          display: window.verificationAccept,
+          'display-none': !window.verificationAccept,
+        }"
+      >
+        <h4>Czy napewno chcesz zatwierdzić to podanie?</h4>
+        <button class="accept-button" @click="alert('accept')">
+          Zatwierdź
+        </button>
+        <button class="discard-button" @click="cancel">Anuluj</button>
+      </div>
+
+      <div
+        class="window__alert--accept"
+        :class="{
+          display: window.alertAccept,
+          'display-none': !window.alertAccept,
+        }"
+      >
+        <h4>Zatwierdzono podanie</h4>
+        <button class="accept-button" @click="cancel">OK</button>
+      </div>
+    </div>
     <article class="forms">
       <section class="forms__item" v-for="form in forms" :key="form">
-        <h2><b>IC | </b>Imię i Nazwisko:</h2>
+        <h2>Imię i Nazwisko:</h2>
         {{ form.name }}
         <button
           class="collapse-button"
@@ -15,23 +89,25 @@
           class="forms__item-content center-col"
           :class="{ display: form.isActive, 'display-none': !form.isActive }"
         >
-          <h2><b>IC | </b>Data Urodzenia:</h2>
+          <h2>Data Urodzenia:</h2>
           {{ form.date }}
-          <h2><b>IC | </b>Pomysł na postać:</h2>
-          {{ form.idea }}
-          <h2><b>IC | </b>Historia Postaci:</h2>
+          <h2>Właściciel organizacji:</h2>
+          {{ form.owner }}
+          <h2>Historia organizacji:</h2>
           {{ form.story }}
-          <h2><b>IC | </b>Kreatywna Akcja:</h2>
-          {{ form.action }}
-          <h2><b>IC | </b>Wiek:</h2>
+          <h2>Oczekiwania od serwera:</h2>
+          {{ form.expects }}
+          <h2>Wiek:</h2>
           {{ form.old }}
-          <h2><b>OOC | </b>Wiedza RP:</h2>
-          {{ form.know }}
-          <h2><b>OOC | </b>Doświadczenie w RP:</h2>
-          {{ form.experience }}
-          <h2><b>OOC | </b>Discord:</h2>
+          <h2>Czym się zajmuje organizacja:</h2>
+          {{ form.type }}
+          <h2>Kwatera organizacji:</h2>
+          {{ form.headquarters }}
+          <h2>Członkowie organizacji:</h2>
+          {{ form.members }}
+          <h2>Discord:</h2>
           {{ form.dc }}
-          <h2><b>OOC | </b>Steam HEX:</h2>
+          <h2>Steam HEX:</h2>
           {{ form.hex }}
           <div class="forms__item-check">
             <button class="accept-button" @click="verification('accept')">
@@ -44,81 +120,6 @@
           <button class="collapse-button" @click="form.isActive = false">
             Zwiń
           </button>
-
-          <div
-            class="forms__item-content-window"
-            :class="{
-              display: window.container,
-              'display-none': !window.container,
-            }"
-          >
-            <div
-              class="forms__item-content-window__verification--discard"
-              :class="{
-                display: window.verificationDiscard,
-                'display-none': !window.verificationDiscard,
-              }"
-            >
-              <h4>Czy napewno chcesz odrzucić to podanie?</h4>
-              <button class="accept-button" @click="prompt">Odrzuć</button>
-              <button class="discard-button" @click="cancel">Anuluj</button>
-            </div>
-
-            <div
-              class="forms__item-content-window__prompt--discard"
-              :class="{
-                display: window.promptDiscard,
-                'display-none': !window.promptDiscard,
-              }"
-            >
-              <h4>Podaj powód odrzucenia podania</h4>
-              <textarea
-                type="text"
-                class="forms__item-content-window__prompt--discard__input"
-                v-model="reason"
-                placeholder="Powód odrzucenia podania."
-              ></textarea>
-              <button class="accept-button" @click="alert('discard')">
-                Zapisz
-              </button>
-            </div>
-
-            <div
-              class="forms__item-content-window__alert--discard"
-              :class="{
-                display: window.alertDiscard,
-                'display-none': !window.alertDiscard,
-              }"
-            >
-              <h4>Odrzucono podanie</h4>
-              <button class="accept-button" @click="cancel">OK</button>
-            </div>
-
-            <div
-              class="forms__item-content-window__verification--accept"
-              :class="{
-                display: window.verificationAccept,
-                'display-none': !window.verificationAccept,
-              }"
-            >
-              <h4>Czy napewno chcesz zatwierdzić to podanie?</h4>
-              <button class="accept-button" @click="alert('accept')">
-                Zatwierdź
-              </button>
-              <button class="discard-button" @click="cancel">Anuluj</button>
-            </div>
-
-            <div
-              class="forms__item-content-window__alert--accept"
-              :class="{
-                display: window.alertAccept,
-                'display-none': !window.alertAccept,
-              }"
-            >
-              <h4>Zatwierdzono podanie</h4>
-              <button class="accept-button" @click="cancel">OK</button>
-            </div>
-          </div>
         </div>
       </section>
     </article>
@@ -216,6 +217,11 @@ export default {
   },
   methods: {
     verification(type) {
+      this.window.alertAccept = false;
+      this.window.alertDiscard = false;
+      this.window.promptDiscard = false;
+      this.verificationDiscard = false;
+      this.verificationAccept = false;
       this.window.container = true;
       if (type === 'accept') this.window.verificationAccept = true;
       else this.window.verificationDiscard = true;
@@ -231,7 +237,12 @@ export default {
       else this.window.alertDiscard = true;
     },
     cancel() {
-      this.window = false;
+      this.window.container = false;
+      this.window.alertAccept = false;
+      this.window.alertDiscard = false;
+      this.window.promptDiscard = false;
+      this.window.verificationDiscard = false;
+      this.window.verificationAccept = false;
     },
   },
 };

@@ -198,6 +198,11 @@ export default {
   },
   methods: {
     verification(type) {
+      this.window.alertAccept = false;
+      this.window.alertDiscard = false;
+      this.window.promptDiscard = false;
+      this.verificationDiscard = false;
+      this.verificationAccept = false;
       this.window.container = true;
       if (type === 'accept') this.window.verificationAccept = true;
       else this.window.verificationDiscard = true;
@@ -213,7 +218,12 @@ export default {
       else this.window.alertDiscard = true;
     },
     cancel() {
-      this.window = false;
+      this.window.container = false;
+      this.window.alertAccept = false;
+      this.window.alertDiscard = false;
+      this.window.promptDiscard = false;
+      this.window.verificationDiscard = false;
+      this.window.verificationAccept = false;
     },
   },
 };
