@@ -237,7 +237,6 @@ export default {
       else this.window.alertDiscard = true;
     },
     cancel() {
-      // this.window = false;
       this.window.container = false;
       this.window.alertAccept = false;
       this.window.alertDiscard = false;
