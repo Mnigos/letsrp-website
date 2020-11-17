@@ -1,9 +1,8 @@
 <template>
   <div class="wrapper">
     <div
-      class="window"
       :class="{
-        display: window.container,
+        window: window.container,
         'display-none': !window.container,
       }"
     >

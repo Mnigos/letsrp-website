@@ -3,7 +3,7 @@
     <div
       class="forms__item-content-window"
       :class="{
-        display: window.container,
+        window: window.container,
         'display-none': !window.container,
       }"
     >

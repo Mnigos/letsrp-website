@@ -1,14 +1,13 @@
 <template>
   <div class="wrapper">
     <div
-      class="forms__item-content-window"
       :class="{
-        display: window.container,
+        window: window.container,
         'display-none': !window.container,
       }"
     >
       <div
-        class="forms__item-content-window__verification--discard"
+        class="window__verification--discard"
         :class="{
           display: window.verificationDiscard,
           'display-none': !window.verificationDiscard,
@@ -20,7 +19,7 @@
       </div>
 
       <div
-        class="forms__item-content-window__prompt--discard"
+        class="window__prompt--discard"
         :class="{
           display: window.promptDiscard,
           'display-none': !window.promptDiscard,
@@ -29,7 +28,7 @@
         <h4>Podaj powód odrzucenia podania</h4>
         <textarea
           type="text"
-          class="forms__item-content-window__prompt--discard__input"
+          class="window__prompt--discard__input"
           v-model="reason"
           placeholder="Powód odrzucenia podania."
         ></textarea>
@@ -39,7 +38,7 @@
       </div>
 
       <div
-        class="forms__item-content-window__alert--discard"
+        class="window__alert--discard"
         :class="{
           display: window.alertDiscard,
           'display-none': !window.alertDiscard,
@@ -50,7 +49,7 @@
       </div>
 
       <div
-        class="forms__item-content-window__verification--accept"
+        class="window__verification--accept"
         :class="{
           display: window.verificationAccept,
           'display-none': !window.verificationAccept,
@@ -64,7 +63,7 @@
       </div>
 
       <div
-        class="forms__item-content-window__alert--accept"
+        class="window__alert--accept"
         :class="{
           display: window.alertAccept,
           'display-none': !window.alertAccept,
