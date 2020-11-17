@@ -70,6 +70,7 @@ export default {
     async go(where) {
       this.componentToShow = pages[where];
       await this.$nextTick();
+      console.log(pages['EeView']);
     },
   },
 };
@@ -101,7 +102,7 @@ body {
 }
 
 .hamburger__wrapper {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
   max-width: 100px;
