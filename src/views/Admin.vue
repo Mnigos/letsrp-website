@@ -1,6 +1,5 @@
 <template>
   <div class="wrapper">
-    <!-- <Login /> -->
     <div class="hamburger__wrapper">
       <button class="hamburger" ref="hamburger" @click="handleClick()">
         <span class="hamburger__box">
@@ -20,7 +19,6 @@
 </template>
 
 <script>
-import Login from '../components/Login';
 import { h } from 'vue';
 import WlView from '../components/WlView';
 import SupView from '../components/SupView';
@@ -34,10 +32,6 @@ const pages = {
 
 export default {
   name: 'Admin',
-  components: {
-    Login,
-    WlView,
-  },
   data() {
     return {
       pages: [
@@ -70,7 +64,6 @@ export default {
     async go(where) {
       this.componentToShow = pages[where];
       await this.$nextTick();
-      console.log(pages['EeView']);
     },
   },
 };

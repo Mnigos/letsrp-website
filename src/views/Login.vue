@@ -42,18 +42,14 @@ export default {
     showPasswordAsText() {
       this.formPasswordType = this.switchVisibility ? 'password' : 'text';
     },
-    auth() {
-      const name = 'John';
-      const pass = 'zaq1@WSX';
-
-      if (this.name === name && this.pass === pass) this.login();
-      else this.messageError = 'Niepoprawne hasło lub nazwa użytkownika';
-    },
     login() {
-      this.$store.dispatch('retrieveToken', {
-        name: this.name,
-        pass: this.pass,
-      });
+      this.$store
+        .dispatch('retrieveToken', {
+          name: this.name,
+          pass: this.pass,
+        })
+        .then(() => this.$router.push('/admin'))
+        .catch(e => console.log(e));
       console.log('e');
     },
   },
