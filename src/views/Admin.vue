@@ -24,12 +24,14 @@ import WlView from '../components/WlView';
 import SupView from '../components/SupView';
 import OrgView from '../components/OrgView';
 import FirmView from '../components/FirmView';
+import LscmView from '../components/LscmView';
 
 const pages = {
   WlView,
   SupView,
   OrgView,
   FirmView,
+  LscmView,
 };
 
 export default {
@@ -52,6 +54,10 @@ export default {
         {
           link: 'FirmView',
           name: 'Firma',
+        },
+        {
+          link: 'LscmView',
+          name: 'LSCM',
         },
       ],
       componentToShow: {
