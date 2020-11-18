@@ -23,11 +23,13 @@ import { h } from 'vue';
 import WlView from '../components/WlView';
 import SupView from '../components/SupView';
 import OrgView from '../components/OrgView';
+import FirmView from '../components/FirmView';
 
 const pages = {
   WlView,
   SupView,
   OrgView,
+  FirmView,
 };
 
 export default {
@@ -46,6 +48,10 @@ export default {
         {
           link: 'OrgView',
           name: 'Organizacja Przestępcza',
+        },
+        {
+          link: 'FirmView',
+          name: 'Firma',
         },
       ],
       componentToShow: {
