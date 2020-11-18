@@ -7,19 +7,21 @@
       }"
     >
       <div
-        class="window__verification--discard"
+        class="window__element"
         :class="{
           display: window.verificationDiscard,
           'display-none': !window.verificationDiscard,
         }"
       >
         <h4>Czy napewno chcesz odrzucić to podanie?</h4>
-        <button class="accept-button" @click="prompt">Odrzuć</button>
-        <button class="discard-button" @click="cancel">Anuluj</button>
+        <div class="window__element__buttons">
+          <button class="accept-button" @click="prompt">Odrzuć</button>
+          <button class="discard-button" @click="cancel">Anuluj</button>
+        </div>
       </div>
 
       <div
-        class="window__prompt--discard"
+        class="window__element"
         :class="{
           display: window.promptDiscard,
           'display-none': !window.promptDiscard,
@@ -28,7 +30,7 @@
         <h4>Podaj powód odrzucenia podania</h4>
         <textarea
           type="text"
-          class="window__prompt--discard__input"
+          class="window__element__input"
           v-model="reason"
           placeholder="Powód odrzucenia podania."
         ></textarea>
@@ -38,7 +40,7 @@
       </div>
 
       <div
-        class="window__alert--discard"
+        class="window__element"
         :class="{
           display: window.alertDiscard,
           'display-none': !window.alertDiscard,
@@ -49,21 +51,23 @@
       </div>
 
       <div
-        class="window__verification--accept"
+        class="window__element"
         :class="{
           display: window.verificationAccept,
           'display-none': !window.verificationAccept,
         }"
       >
         <h4>Czy napewno chcesz zatwierdzić to podanie?</h4>
-        <button class="accept-button" @click="alert('accept')">
-          Zatwierdź
-        </button>
-        <button class="discard-button" @click="cancel">Anuluj</button>
+        <div class="window__element__buttons">
+          <button class="accept-button" @click="alert('accept')">
+            Zatwierdź
+          </button>
+          <button class="discard-button" @click="cancel">Anuluj</button>
+        </div>
       </div>
 
       <div
-        class="window__alert--accept"
+        class="window__element"
         :class="{
           display: window.alertAccept,
           'display-none': !window.alertAccept,
