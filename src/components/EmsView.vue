@@ -79,8 +79,13 @@
     </div>
     <article class="forms">
       <section class="forms__item" v-for="form in forms" :key="form">
-        <h2>Imię i Nazwisko:</h2>
-        {{ form.name }}
+        <div
+          class="forms__item__header"
+          :class="{ display: !form.isActive, 'display-none': form.isActive }"
+        >
+          <h2><b>OOC | </b>Discord:</h2>
+          <h3>&nbsp;{{ form.dc }}</h3>
+        </div>
         <button
           class="collapse-button"
           @click="form.isActive = true"
@@ -92,6 +97,8 @@
           class="forms__item-content center-col"
           :class="{ display: form.isActive, 'display-none': !form.isActive }"
         >
+          <h2>Imię i Nazwisko:</h2>
+          {{ form.name }}
           <h2>Data Urodzenia:</h2>
           {{ form.date }}
           <h2>Pełniona rola EMS:</h2>

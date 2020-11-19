@@ -19,7 +19,6 @@
           <button class="discard-button" @click="cancel">Anuluj</button>
         </div>
       </div>
-
       <div
         class="window__element"
         :class="{
@@ -38,7 +37,6 @@
           Zapisz
         </button>
       </div>
-
       <div
         class="window__element"
         :class="{
@@ -49,7 +47,6 @@
         <h4>Odrzucono podanie</h4>
         <button class="accept-button" @click="cancel">OK</button>
       </div>
-
       <div
         class="window__element"
         :class="{
@@ -65,7 +62,6 @@
           <button class="discard-button" @click="cancel">Anuluj</button>
         </div>
       </div>
-
       <div
         class="window__element"
         :class="{
@@ -79,8 +75,13 @@
     </div>
     <article class="forms">
       <section class="forms__item" v-for="form in forms" :key="form">
-        <h2><b>IC | </b>Imię i Nazwisko:</h2>
-        {{ form.name }}
+        <div
+          class="forms__item__header"
+          :class="{ display: !form.isActive, 'display-none': form.isActive }"
+        >
+          <h2><b>OOC | </b>Discord:</h2>
+          <h3>&nbsp;{{ form.dc }}</h3>
+        </div>
         <button
           class="collapse-button"
           @click="form.isActive = true"
@@ -92,6 +93,8 @@
           class="forms__item-content center-col"
           :class="{ display: form.isActive, 'display-none': !form.isActive }"
         >
+          <h2><b>IC | </b>Imię i Nazwisko:</h2>
+          {{ form.name }}
           <h2><b>IC | </b>Data Urodzenia:</h2>
           {{ form.date }}
           <h2><b>IC | </b>Pomysł na postać:</h2>
