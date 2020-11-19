@@ -79,7 +79,7 @@
     </div>
     <article class="forms">
       <section class="forms__item" v-for="form in forms" :key="form">
-        <h2><b>IC | </b>Imię:</h2>
+        <h2>EMSImię:</h2>
         {{ form.name }}
         <button
           class="collapse-button"
@@ -92,24 +92,23 @@
           class="forms__item-content center-col"
           :class="{ display: form.isActive, 'display-none': !form.isActive }"
         >
-          <h2><b>IC | </b>O sobie:</h2>
+          <h2>O sobie:</h2>
           {{ form.about }}
-          <h2><b>IC | </b>Dlaczego ty:</h2>
+          <h2>Dlaczego ty:</h2>
           {{ form.whyU }}
-          <h2><b>IC | </b>Historia Postaci:</h2>
+          <h2>Historia Postaci:</h2>
           {{ form.story }}
-          <h2><b>IC | </b>Twoje doświadczenie na tym stanowisku:</h2>
+          <h2>Twoje doświadczenie na tym stanowisku:</h2>
           {{ form.experience }}
           <h2>
-            <b>IC | </b>
             Ile czasu dziennie jesteś w stanie poświęcić na serwer:
           </h2>
           {{ form.hoursPerDay }}
-          <h2><b>OOC | </b>Wiek:</h2>
+          <h2>Wiek:</h2>
           {{ form.old }}
-          <h2><b>OOC | </b>Discord:</h2>
+          <h2>Discord:</h2>
           {{ form.dc }}
-          <h2><b>OOC | </b>Steam HEX:</h2>
+          <h2>Steam HEX:</h2>
           {{ form.hex }}
           <div class="forms__item-check">
             <button class="accept-button" @click="verification('accept')">
