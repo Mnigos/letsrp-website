@@ -154,3 +154,15 @@ h2, h3 {
     height: 50px;
   }
 }
+
+.search-bar {
+  display: flex;
+  justify-content: flex-end;
+
+  input {
+    margin: 20px;
+    height: 40px;
+    width: 250px;
+    border-radius: 10px;
+  }
+}
