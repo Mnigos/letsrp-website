@@ -77,13 +77,21 @@
         <button class="accept-button" @click="cancel">OK</button>
       </div>
     </div>
+    <div class="search-bar">
+      <h3>Wyszukaj podania</h3>
+      <input
+        type="text"
+        v-model="search"
+        placeholder="Wyszukaj podanie za pomocą discord ID"
+      />
+    </div>
     <article class="forms">
-      <section class="forms__item" v-for="form in forms" :key="form">
+      <section class="forms__item" v-for="form in filteredForms" :key="form">
         <div
           class="forms__item__header"
           :class="{ display: !form.isActive, 'display-none': form.isActive }"
         >
-          <h2><b>OOC | </b>Discord:</h2>
+          <h2>Discord:</h2>
           <h3>&nbsp;{{ form.dc }}</h3>
         </div>
         <button
@@ -150,6 +158,7 @@ export default {
             'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
           hoursPerDay: 3,
           old: 1,
+          dc: 'MoneyIgos#2000',
           hex: '110000100000638',
           isActive: false,
         },
@@ -164,6 +173,7 @@ export default {
           hoursPerDay: 3,
           old: 1,
           hex: '110000100000638',
+          dc: 'rysiek21#2137',
           isActive: false,
         },
         {
@@ -176,6 +186,7 @@ export default {
             'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
           hoursPerDay: 3,
           old: 1,
+          dc: '1_1#2020',
           hex: '110000100000638',
           isActive: false,
         },
@@ -189,10 +200,12 @@ export default {
             'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
           hoursPerDay: 3,
           old: 1,
+          dc: 'MoneyIgos#2000',
           hex: '110000100000638',
           isActive: false,
         },
       ],
+      search: '',
       checking: false,
       window: {
         container: false,
@@ -232,6 +245,13 @@ export default {
       this.window.promptDiscard = false;
       this.window.verificationDiscard = false;
       this.window.verificationAccept = false;
+    },
+  },
+  computed: {
+    filteredForms() {
+      return this.forms.filter(form => {
+        return form.dc.match(this.search);
+      });
     },
   },
 };

@@ -77,8 +77,16 @@
         <button class="accept-button" @click="cancel">OK</button>
       </div>
     </div>
+    <div class="search-bar">
+      <h3>Wyszukaj podania</h3>
+      <input
+        type="text"
+        v-model="search"
+        placeholder="Wyszukaj podanie za pomocą discord ID"
+      />
+    </div>
     <article class="forms">
-      <section class="forms__item" v-for="form in forms" :key="form">
+      <section class="forms__item" v-for="form in filteredForms" :key="form">
         <div
           class="forms__item__header"
           :class="{ display: !form.isActive, 'display-none': form.isActive }"
@@ -215,6 +223,7 @@ export default {
           isActive: false,
         },
       ],
+      search: '',
       checking: false,
       window: {
         container: false,
@@ -254,6 +263,13 @@ export default {
       this.window.promptDiscard = false;
       this.window.verificationDiscard = false;
       this.window.verificationAccept = false;
+    },
+  },
+  computed: {
+    filteredForms() {
+      return this.forms.filter(form => {
+        return form.dc.match(this.search);
+      });
     },
   },
 };
