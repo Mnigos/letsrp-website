@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     showPasswordAsText() {
-      this.formPasswordType = this.switchVisibility ? 'password' : 'text';
+      this.formPasswordType = this.switchVisibility ? 'text' : 'password';
     },
     login() {
       this.$store
