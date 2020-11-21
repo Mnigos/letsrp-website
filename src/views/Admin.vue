@@ -79,7 +79,6 @@ export default {
   },
   created() {
     this.go('WlView');
-    console.log(this.$store.state.token);
     if (this.$store.state.token === '') this.$router.push('/admin/login');
   },
   methods: {
