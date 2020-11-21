@@ -79,7 +79,7 @@ export default {
   },
   created() {
     this.go('WlView');
-    if (this.$store.state.token === '') this.$router.push('/admin/login');
+    if (!this.$store.state.token) this.$router.push('/admin/login');
   },
   methods: {
     handleClick() {
