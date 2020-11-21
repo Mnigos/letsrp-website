@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import Axios from 'axios';
+
 export default {
   name: 'Login',
   data() {
@@ -43,14 +45,25 @@ export default {
       this.formPasswordType = this.switchVisibility ? 'text' : 'password';
     },
     login() {
-      this.$store
-        .dispatch('retrieveToken', {
-          name: this.name,
-          pass: this.pass,
-        })
-        .then(() => this.$router.push('/admin'))
-        .catch(e => console.log(e));
-      console.log('e');
+      this.$store.state.error = true;
+
+      if (!this.name || !this.pass)
+        return (this.messageError = 'Podaj nazwę użytkownika i hasło');
+      else this.messageError = '';
+
+      Axios.post(`${process.env.VUE_APP_API_URL}/auth/admin`, {
+        name: this.name,
+        pass: this.pass,
+      })
+        .then(res => (this.$store.state.token = res.data.token))
+        .catch(
+          () => (this.messageError = 'Błędna nazwa użytkownika lub hasło')
+        );
+
+      if (!this.$store.state.error)
+        return (this.messageError = 'Błędna nazwa użytkownika lub hasło');
+
+      if (this.$store.state.token) this.$router.push('/admin');
     },
   },
 };
@@ -98,6 +111,13 @@ export default {
         }
       }
     }
+  }
+
+  &__error {
+    color: #dd0000;
+    height: 200px;
+    margin: 20px;
+    font-size: 0.7em;
   }
 }
 

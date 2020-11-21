@@ -20,7 +20,7 @@ const routes = [
     name: 'Admin',
     component: Admin,
     meta: {
-      requiresAuth: true,
+      adminRequired: true,
     },
   },
   {
