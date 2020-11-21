@@ -60,9 +60,6 @@ export default {
           () => (this.messageError = 'Błędna nazwa użytkownika lub hasło')
         );
 
-      if (!this.$store.state.error)
-        return (this.messageError = 'Błędna nazwa użytkownika lub hasło');
-
       if (this.$store.state.token) this.$router.push('/admin');
     },
   },
