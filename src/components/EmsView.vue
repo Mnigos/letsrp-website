@@ -77,6 +77,11 @@
         <button class="accept-button" @click="cancel">OK</button>
       </div>
     </div>
+
+    <div class="status-type">
+      <h3>Zaapceptowane podania</h3>
+      <input type="checkbox" v-model="acceptedForms" @change="formFilter" />
+    </div>
     <div class="search-bar">
       <h3>Wyszukaj podania</h3>
       <input
@@ -159,6 +164,8 @@ export default {
       forms: [],
       search: '',
       checking: false,
+      acceptedForms: false,
+      formsType: 'awaiting',
       reason: '',
       id: '',
       window: {
@@ -233,9 +240,16 @@ export default {
   },
   computed: {
     filteredForms() {
-      return this.forms.filter(form => {
-        return form.dc.match(this.search);
-      });
+      if (!this.acceptedForms)
+        return this.forms.filter(form => {
+          this.formsType = 'awaiting';
+          return form.dc.match(this.search) && form.status.match('awaiting');
+        });
+      else
+        return this.forms.filter(form => {
+          this.formsType = 'accepted';
+          return form.dc.match(this.search) && form.status.match('accepted');
+        });
     },
   },
 };

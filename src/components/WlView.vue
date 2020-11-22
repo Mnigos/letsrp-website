@@ -73,6 +73,11 @@
         <button class="accept-button" @click="cancel">OK</button>
       </div>
     </div>
+
+    <div class="status-type">
+      <h3>Zaapceptowane podania</h3>
+      <input type="checkbox" v-model="acceptedForms" @change="formFilter" />
+    </div>
     <div class="search-bar">
       <h3>Wyszukaj podania</h3>
       <input
@@ -121,6 +126,8 @@
           {{ form.dc }}
           <h2><b>OOC | </b>Steam HEX:</h2>
           {{ form.hex }}
+          <h3>Status:</h3>
+          {{ form.status }}
           <div class="forms__item-check">
             <button
               class="accept-button"
@@ -153,6 +160,8 @@ export default {
     return {
       forms: [],
       search: '',
+      acceptedForms: false,
+      formsType: 'awaiting',
       checking: false,
       reason: '',
       id: '',
@@ -228,9 +237,16 @@ export default {
   },
   computed: {
     filteredForms() {
-      return this.forms.filter(form => {
-        return form.dc.match(this.search);
-      });
+      if (!this.acceptedForms)
+        return this.forms.filter(form => {
+          this.formsType = 'awaiting';
+          return form.dc.match(this.search) && form.status.match('awaiting');
+        });
+      else
+        return this.forms.filter(form => {
+          this.formsType = 'accepted';
+          return form.dc.match(this.search) && form.status.match('accepted');
+        });
     },
   },
 };
