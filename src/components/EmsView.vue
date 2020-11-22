@@ -172,7 +172,7 @@ export default {
     };
   },
   created() {
-    Axios.post(`${process.env.VUE_APP_API_URL}/admin/wl`, {
+    Axios.post(`${process.env.VUE_APP_API_URL}/admin/ems`, {
       token: this.$store.state.token,
     }).then(res => (this.forms = res.data.form));
   },
@@ -201,7 +201,7 @@ export default {
         this.window.alertAccept = true;
         console.log(this.id);
 
-        Axios.post(`${process.env.VUE_APP_API_URL}/admin/wl/check`, {
+        Axios.post(`${process.env.VUE_APP_API_URL}/admin/ems/check`, {
           token: this.$store.state.token,
           id: this.id,
           status: 'accepted',
@@ -210,7 +210,7 @@ export default {
         this.window.alertDiscard = true;
         console.log(this.id);
 
-        Axios.post(`${process.env.VUE_APP_API_URL}/admin/wl/check`, {
+        Axios.post(`${process.env.VUE_APP_API_URL}/admin/ems/check`, {
           token: this.$store.state.token,
           id: this.id,
           status: 'accepted',

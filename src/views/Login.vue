@@ -45,8 +45,6 @@ export default {
       this.formPasswordType = this.switchVisibility ? 'text' : 'password';
     },
     login() {
-      this.$store.state.error = true;
-
       if (!this.name || !this.pass)
         return (this.messageError = 'Podaj nazwę użytkownika i hasło');
       else this.messageError = '';
@@ -59,6 +57,8 @@ export default {
         .catch(
           () => (this.messageError = 'Błędna nazwa użytkownika lub hasło')
         );
+
+      console.log('e');
 
       if (this.$store.state.token) this.$router.push('/admin');
     },
