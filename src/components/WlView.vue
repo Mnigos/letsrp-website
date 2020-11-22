@@ -74,17 +74,19 @@
       </div>
     </div>
 
-    <div class="status-type">
-      <h3>Zaapceptowane podania</h3>
-      <input type="checkbox" v-model="acceptedForms" @change="formFilter" />
-    </div>
-    <div class="search-bar">
-      <h3>Wyszukaj podania</h3>
-      <input
-        type="text"
-        v-model="search"
-        placeholder="Wyszukaj podanie za pomocą discord ID"
-      />
+    <div class="filter">
+      <div class="status-type">
+        <h3>Zaakceptowane podania</h3>
+        <input type="checkbox" v-model="acceptedForms" @change="formFilter" />
+      </div>
+      <div class="search-bar">
+        <h3>Wyszukaj podania</h3>
+        <input
+          type="text"
+          v-model="search"
+          placeholder="Wyszukaj podanie za pomocą discord ID"
+        />
+      </div>
     </div>
     <article class="forms">
       <section class="forms__item" v-for="form in filteredForms" :key="form">
