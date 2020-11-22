@@ -128,7 +128,10 @@
             >
               Zaakceptuj
             </button>
-            <button class="discard-button" @click="verification('discard')">
+            <button
+              class="discard-button"
+              @click="verification('discard', form._id)"
+            >
               Odrzuć
             </button>
           </div>
@@ -149,10 +152,10 @@ export default {
   data() {
     return {
       forms: [],
-      form: '',
       search: '',
       checking: false,
       reason: '',
+      id: '',
       window: {
         container: false,
         alertAccept: false,
@@ -169,7 +172,7 @@ export default {
     }).then(res => (this.forms = res.data.form));
   },
   methods: {
-    verification(type, form) {
+    verification(type, id) {
       this.window.alertAccept = false;
       this.window.alertDiscard = false;
       this.window.promptDiscard = false;
@@ -177,7 +180,8 @@ export default {
       this.verificationAccept = false;
       this.window.container = true;
 
-      this.form = form;
+      this.id = id;
+
       if (type === 'accept') this.window.verificationAccept = true;
       else this.window.verificationDiscard = true;
     },
@@ -190,19 +194,21 @@ export default {
       this.window.promptDiscard = false;
       if (type === 'accept') {
         this.window.alertAccept = true;
+        console.log(this.id);
 
         Axios.post(`${process.env.VUE_APP_API_URL}/admin/wl/check`, {
           token: this.$store.state.token,
-          id: this.form,
+          id: this.id,
           status: 'accepted',
         });
       } else {
         this.window.alertDiscard = true;
+        console.log(this.id);
 
         Axios.post(`${process.env.VUE_APP_API_URL}/admin/wl/check`, {
           token: this.$store.state.token,
-          id: this.form,
-          status: 'rejected',
+          id: this.id,
+          status: 'accepted',
           reason: this.reason,
         });
       }
