@@ -128,10 +128,16 @@
           <h2>Steam HEX:</h2>
           {{ form.hex }}
           <div class="forms__item-check">
-            <button class="accept-button" @click="verification('accept')">
+            <button
+              class="accept-button"
+              @click="verification('accept', form._id)"
+            >
               Zaakceptuj
             </button>
-            <button class="discard-button" @click="verification('discard')">
+            <button
+              class="discard-button"
+              @click="verification('discard', form._id)"
+            >
               Odrzuć
             </button>
           </div>
@@ -144,87 +150,17 @@
   </div>
 </template>
 <script>
+import Axios from 'axios';
+
 export default {
   name: 'OrgView',
   data() {
     return {
-      forms: [
-        {
-          name: 'e',
-          date: '01-01-2020',
-          act:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          bring:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          action:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          experience:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          old: 1,
-          whyU:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          hoursPerDay: 2,
-          dc: 'MoneyIgos#2000',
-          hex: '110000100000638',
-          isActive: false,
-        },
-        {
-          name: 'Form2',
-          date: '01-01-2020',
-          owner: 'e',
-          story:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          expects:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          old: 1,
-          type:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          headquarters:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          members: 2,
-          dc: 'MoneyIgos#2000',
-          hex: '110000100000638',
-          isActive: false,
-        },
-        {
-          name: 'Form3',
-          date: '01-01-2020',
-          owner: 'e',
-          story:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          expects:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          old: 1,
-          type:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          headquarters:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          members: 2,
-          dc: 'MoneyIgos#2000',
-          hex: '110000100000638',
-          isActive: false,
-        },
-        {
-          name: 'Form4',
-          date: '01-01-2020',
-          owner: 'e',
-          story:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          expects:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum utviverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          old: 1,
-          type:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          headquarters:
-            'viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut',
-          members: 2,
-          dc: 'MoneyIgos#2000',
-          hex: '110000100000638',
-          isActive: false,
-        },
-      ],
+      forms: [],
       search: '',
       checking: false,
+      reason: '',
+      id: '',
       window: {
         container: false,
         alertAccept: false,
@@ -235,14 +171,22 @@ export default {
       },
     };
   },
+  created() {
+    Axios.post(`${process.env.VUE_APP_API_URL}/admin/wl`, {
+      token: this.$store.state.token,
+    }).then(res => (this.forms = res.data.form));
+  },
   methods: {
-    verification(type) {
+    verification(type, id) {
       this.window.alertAccept = false;
       this.window.alertDiscard = false;
       this.window.promptDiscard = false;
       this.verificationDiscard = false;
       this.verificationAccept = false;
       this.window.container = true;
+
+      this.id = id;
+
       if (type === 'accept') this.window.verificationAccept = true;
       else this.window.verificationDiscard = true;
     },
@@ -253,8 +197,28 @@ export default {
     alert(type) {
       this.window.verificationAccept = false;
       this.window.promptDiscard = false;
-      if (type === 'accept') this.window.alertAccept = true;
-      else this.window.alertDiscard = true;
+      if (type === 'accept') {
+        this.window.alertAccept = true;
+        console.log(this.id);
+
+        Axios.post(`${process.env.VUE_APP_API_URL}/admin/wl/check`, {
+          token: this.$store.state.token,
+          id: this.id,
+          status: 'accepted',
+        });
+      } else {
+        this.window.alertDiscard = true;
+        console.log(this.id);
+
+        Axios.post(`${process.env.VUE_APP_API_URL}/admin/wl/check`, {
+          token: this.$store.state.token,
+          id: this.id,
+          status: 'accepted',
+          reason: this.reason,
+        });
+      }
+
+      this.form = '';
     },
     cancel() {
       this.window.container = false;
@@ -263,6 +227,8 @@ export default {
       this.window.promptDiscard = false;
       this.window.verificationDiscard = false;
       this.window.verificationAccept = false;
+
+      this.form = '';
     },
   },
   computed: {
