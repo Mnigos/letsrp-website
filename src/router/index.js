@@ -3,6 +3,7 @@ import Home from '../views/Home';
 import Applications from '../views/Applications';
 import Admin from '../views/Admin';
 import Login from '../views/Login';
+import ApplicationsDone from '../views/ApplicationsDone';
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: '/applications',
     name: 'Applications',
     component: Applications,
+  },
+  {
+    path: '/applications/done',
+    name: 'ApplicationsDone',
+    component: ApplicationsDone,
   },
   {
     path: '/admin',
