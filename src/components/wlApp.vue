@@ -142,12 +142,23 @@
 
 <script>
 import { validationLength, validationRegexp } from '../validation';
+import Axios from 'axios';
 
 export default {
   name: 'wlApp',
   data() {
     return {
       message: '',
+      name: '',
+      date: '',
+      idea: '',
+      story: '',
+      action: '',
+      old: '',
+      know: '',
+      experience: '',
+      dc: '',
+      hex: '',
     };
   },
   methods: {
@@ -192,6 +203,23 @@ export default {
       if (this.old) messagesArray[4] = '';
 
       this.message = messagesArray.slice(0).join('');
+
+      const dateNow = new Date(Date.now()).toDateString();
+
+      if (!this.message)
+        Axios.post(`${process.env.VUE_APP_API_URL}/applications/wl`, {
+          name: this.name,
+          date: this.date,
+          idea: this.idea,
+          story: this.story,
+          action: this.action,
+          know: this.know,
+          experience: this.experience,
+          old: +this.old,
+          dc: this.dc,
+          hex: this.hex,
+          submissionDate: dateNow,
+        }).then(() => this.$router.push('/applications/done'));
     },
   },
 };

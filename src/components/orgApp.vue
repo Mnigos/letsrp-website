@@ -34,7 +34,7 @@
               <input
                 type="text"
                 class="form__element-input"
-                v-model="whyU"
+                v-model="owner"
                 placeholder="Imię IC właściciela organizacji."
               />
             </form>
@@ -138,12 +138,23 @@
 
 <script>
 import { validationRegexp, validationLength } from '../validation';
+import Axios from 'axios';
 
 export default {
   name: 'orgApp',
   data() {
     return {
       message: '',
+      name: '',
+      idea: '',
+      owner: '',
+      expects: '',
+      members: undefined,
+      old: undefined,
+      type: '',
+      headquarters: '',
+      dc: '',
+      hex: '',
     };
   },
   methods: {
@@ -186,6 +197,23 @@ export default {
       if (this.hoursPerDay) messagesArray[7] = '';
 
       this.message = messagesArray.slice(0).join('');
+
+      const dateNow = new Date(Date.now()).toDateString();
+
+      if (!this.message)
+        Axios.post(`${process.env.VUE_APP_API_URL}/applications/org`, {
+          name: this.name,
+          idea: this.idea,
+          owner: this.owner,
+          expects: this.expects,
+          members: +this.members,
+          old: +this.old,
+          type: this.type,
+          headquarters: this.headquarters,
+          dc: this.dc,
+          hex: this.hex,
+          submissionDate: dateNow,
+        }).then(() => this.$router.push('/applications/done'));
     },
   },
 };

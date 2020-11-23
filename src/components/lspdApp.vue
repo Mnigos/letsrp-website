@@ -157,12 +157,24 @@
 
 <script>
 import { validationLength, validationRegexp } from '../validation';
+import Axios from 'axios';
 
 export default {
   name: 'wlApp',
   data() {
     return {
       message: '',
+      name: '',
+      date: '',
+      act: '',
+      bring: '',
+      action: '',
+      whyU: '',
+      hoursPerDay: undefined,
+      experience: '',
+      old: undefined,
+      dc: '',
+      hex: '',
     };
   },
   methods: {
@@ -212,6 +224,24 @@ export default {
       if (this.hoursPerDay) messagesArray[7] = '';
 
       this.message = messagesArray.slice(0).join('');
+
+      const dateNow = new Date(Date.now()).toDateString();
+
+      if (!this.message)
+        Axios.post(`${process.env.VUE_APP_API_URL}/applications/lspd`, {
+          name: this.name,
+          date: this.date,
+          act: this.act,
+          bring: this.bring,
+          action: this.action,
+          whyU: this.whyU,
+          hoursPerDay: +this.hoursPerDay,
+          experience: this.experience,
+          old: +this.old,
+          dc: this.dc,
+          hex: this.hex,
+          submissionDate: dateNow,
+        }).then(() => this.$router.push('/applications/done'));
     },
   },
 };
