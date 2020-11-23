@@ -11,12 +11,18 @@
         <router-link to="/">Powrót do strony głównej</router-link>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from '../components/Footer';
+
 export default {
   name: 'ApplicationsDone',
+  components: {
+    Footer,
+  },
 };
 </script>
 
@@ -24,8 +30,11 @@ export default {
 @use '../styles/vars';
 
 .wrapper {
+  min-height: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
+  position: relative;
   align-items: center;
 }
 
@@ -34,6 +43,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 50vw;
+  height: 100vh;
 
   &__back {
     align-items: center;
@@ -83,6 +93,17 @@ export default {
         color: #fff;
         text-decoration: none;
       }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .info {
+    width: 90vw;
+
+    &__back {
+      width: 300px;
+      height: 80px;
     }
   }
 }
