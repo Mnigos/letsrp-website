@@ -27,6 +27,7 @@ import FirmView from '../components/FirmView';
 import LscmView from '../components/LscmView';
 import LspdView from '../components/LspdView';
 import EmsView from '../components/EmsView';
+import AdminManagement from '../components/AdminManagement';
 
 const pages = {
   WlView,
@@ -36,6 +37,7 @@ const pages = {
   LscmView,
   LspdView,
   EmsView,
+  AdminManagement,
 };
 
 export default {
@@ -70,6 +72,10 @@ export default {
         {
           link: 'EmsView',
           name: 'EMS',
+        },
+        {
+          link: 'AdminManagement',
+          name: 'Zarządanie',
         },
       ],
       componentToShow: {
