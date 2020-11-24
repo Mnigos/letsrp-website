@@ -53,7 +53,10 @@ export default {
         name: this.name,
         pass: this.pass,
       })
-        .then(res => (this.$store.state.token = res.data.token))
+        .then(res => {
+          this.$store.state.token = res.data.token;
+          this.$store.state.perms = res.data.perms;
+        })
         .catch(
           () => (this.messageError = 'Błędna nazwa użytkownika lub hasło')
         );

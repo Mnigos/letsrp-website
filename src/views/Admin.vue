@@ -8,9 +8,16 @@
       </button>
       <nav class="navbar" ref="nav">
         <div class="navbar__list" :key="page" v-for="page in pages">
-          <button class="navbar__item" @click="go(page.link)">
-            {{ page.name }}
-          </button>
+          <div v-if="perms === page.perms">
+            <button class="navbar__item" @click="go(page.link)">
+              {{ page.name }}
+            </button>
+          </div>
+          <div v-else-if="perms === 'admin'">
+            <button class="navbar__item" @click="go(page.link)">
+              {{ page.name }}
+            </button>
+          </div>
         </div>
       </nav>
     </div>
@@ -46,30 +53,37 @@ export default {
     return {
       pages: [
         {
+          perms: 'wl',
           link: 'WlView',
           name: 'Whitelist',
         },
         {
+          perms: 'sup',
           link: 'SupView',
           name: 'Support',
         },
         {
+          perms: 'org',
           link: 'OrgView',
           name: 'Organizacja Przestępcza',
         },
         {
+          perms: 'firm',
           link: 'FirmView',
           name: 'Firma',
         },
         {
+          perms: 'lscm',
           link: 'LscmView',
           name: 'LSCM',
         },
         {
+          perms: 'lspd',
           link: 'LspdView',
           name: 'LSPD',
         },
         {
+          perms: 'ems',
           link: 'EmsView',
           name: 'EMS',
         },
@@ -78,14 +92,16 @@ export default {
           name: 'Zarządanie',
         },
       ],
+      perms: '',
       componentToShow: {
         render: () => h('div', ''),
       },
     };
   },
   created() {
+    if (!this.$store.state.token) return this.$router.push('/admin/login');
     this.go('WlView');
-    if (!this.$store.state.token) this.$router.push('/admin/login');
+    this.perms = this.$store.state.perms;
   },
   methods: {
     handleClick() {
