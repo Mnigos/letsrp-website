@@ -80,7 +80,7 @@
 
     <div class="filter">
       <div class="status-type">
-        <h3>Zaapceptowane podania</h3>
+        <h3>Zaakceptowane podania</h3>
         <input type="checkbox" v-model="acceptedForms" @change="formFilter" />
       </div>
       <div class="search-bar">

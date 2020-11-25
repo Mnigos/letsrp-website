@@ -190,11 +190,12 @@ export default {
         ],
         messagesArray
       );
-      if (!this.old) messagesArray.push('<br /> Musisz podać swój wiek');
+      if (!this.old || typeof this.old !== 'number')
+        messagesArray.push('<br /> Musisz podać swój wiek');
       if (this.old) messagesArray[6] = '';
-      if (!this.members)
+      if (!this.members || typeof this.members !== 'number')
         messagesArray.push('<br /> Musisz podać członków swojej firmy');
-      if (this.hoursPerDay) messagesArray[7] = '';
+      if (this.members) messagesArray[7] = '';
 
       this.message = messagesArray.slice(0).join('');
 

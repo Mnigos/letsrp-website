@@ -216,13 +216,12 @@ export default {
         messagesArray
       );
       if (!this.old) messagesArray.push('<br /> Musisz podać swój wiek');
-      if (this.old || typeof this.old === 'number') messagesArray[4] = '';
-      if (!this.hoursPerDay)
+      if (this.old || typeof this.old !== 'number') messagesArray[4] = '';
+      if (!this.hoursPerDay || typeof this.hoursPerDay !== 'number')
         messagesArray.push(
           '<br /> Musisz podać ile godzin dziennie jesteś w stanie spędzić'
         );
-      if (this.hoursPerDay || typeof this.old === 'number')
-        messagesArray[7] = '';
+      if (this.hoursPerDay) messagesArray[7] = '';
 
       this.message = messagesArray.slice(0).join('');
 

@@ -199,7 +199,8 @@ export default {
         ],
         messagesArray
       );
-      if (!this.old) messagesArray.push('<br /> Musisz podać swój wiek');
+      if (!this.old || typeof this.old !== 'number')
+        messagesArray.push('<br /> Musisz podać swój wiek');
       if (this.old) messagesArray[4] = '';
 
       this.message = messagesArray.slice(0).join('');
