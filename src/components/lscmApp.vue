@@ -215,10 +215,10 @@ export default {
         ],
         messagesArray
       );
-      if (!this.old || typeof this.old !== 'number')
+      if (!this.old || typeof +this.old !== 'number')
         messagesArray.push('<br /> Musisz podać swój wiek');
       if (this.old) messagesArray[4] = '';
-      if (!this.hoursPerDay || typeof this.hoursPerDay !== 'number')
+      if (!this.hoursPerDay || typeof +this.hoursPerDay !== 'number')
         messagesArray.push(
           '<br /> Musisz podać ile godzin dziennie jesteś w stanie spędzić'
         );
