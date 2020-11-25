@@ -16,6 +16,15 @@
 
 <script>
 export default {
+  name: 'App',
+  watch: {
+    $route: {
+      immediate: true,
+      handler() {
+        document.title = "Let's RP";
+      },
+    },
+  },
   mounted() {
     window.addEventListener('scroll', () => {
       this.$refs.nav.classList.toggle('sticky', window.scrollY > 0);
