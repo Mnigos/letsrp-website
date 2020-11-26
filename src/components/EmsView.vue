@@ -249,8 +249,10 @@ export default {
         });
       else
         return this.forms.filter(form => {
-          this.formsType = 'accepted';
-          return form.dc.match(this.search) && form.status.match('accepted');
+          this.formsType = 'acceptedSent';
+          return (
+            form.dc.match(this.search) && form.status.match('acceptedSent')
+          );
         });
     },
   },
