@@ -144,7 +144,7 @@ export default {
       );
 
       validationLength(
-        [this.name, this.about, this.whyU, this.experience, this.hex],
+        [this.name, this.about, this.whyU, this.experienceSup, this.hex],
         [8, 20, 20, 20, 15],
         [
           '<br />Imię i nazwisko twojej postaci musi zawierać co najmniej 8 znaków',
