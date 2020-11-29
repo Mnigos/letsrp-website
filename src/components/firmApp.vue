@@ -202,7 +202,7 @@ export default {
       const dateNow = new Date(Date.now()).toDateString();
 
       if (!this.message)
-        Axios.post(`${process.env.VUE_APP_API_URL}/applications/ems`, {
+        Axios.post(`${process.env.VUE_APP_API_URL}/applications/firm`, {
           name: this.name,
           idea: this.idea,
           owner: this.owner,
