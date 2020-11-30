@@ -219,7 +219,7 @@ export default {
         Axios.post(`${process.env.VUE_APP_API_URL}/admin/wl/check`, {
           token: this.$store.state.token,
           id: this.id,
-          status: 'accepted',
+          status: 'rejected',
           reason: this.reason,
         });
       }
