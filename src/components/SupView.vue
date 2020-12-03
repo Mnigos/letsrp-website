@@ -118,10 +118,8 @@
           {{ form.about }}
           <h2>Dlaczego ty:</h2>
           {{ form.whyU }}
-          <h2>Historia Postaci:</h2>
-          {{ form.story }}
           <h2>Twoje doświadczenie na tym stanowisku:</h2>
-          {{ form.experience }}
+          {{ form.experienceSup }}
           <h2>
             Ile czasu dziennie jesteś w stanie poświęcić na serwer:
           </h2>
